@@ -36,5 +36,12 @@ namespace _01_28
                 yield return generatemonster;
             }
         }
+
+        public override string ToString() {
+            string showtype = $"Type: {Type}";
+            string showhealth = $"Health: {Math.Round(Health, 2)}";
+            string showstrength = $"Strengh: {Strength}";
+            return ToString();
+        }
     }
 }
