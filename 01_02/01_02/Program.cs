@@ -67,6 +67,7 @@ namespace _01_02
                     value = float.Parse(userinput);
                     // Colocar na linha
                     matrix[j, i] = value;
+                    PrintMatrix();
                 }
             }
             //
@@ -102,6 +103,7 @@ namespace _01_02
                     value = float.Parse(userinput);
                     // Colocar na linha
                     vector[i, 0] = value;
+                    PrintVector();
                 }
             }
             else if (matrixcolumns < matrixlines) {
@@ -113,6 +115,7 @@ namespace _01_02
                     value = float.Parse(userinput);
                     // Colocar na linha
                     vector[i, 0] = value;
+                    PrintVector();
                 }
             }
             //
@@ -200,6 +203,50 @@ namespace _01_02
             }
             // Mostrar resultado
             Console.WriteLine(resultstring);
+        }
+        //
+
+        // Método para mostrar a matriz 
+        private static void PrintMatrix() {
+            // Tamanho da linha
+            int rowLength = matrix.GetLength(0);
+            // Tamanho da coluna
+            int colLength = matrix.GetLength(1);
+            // Resultado
+            string matrixstring = "";
+
+            for (int i = 0; i < rowLength; i++) {
+                for (int j = 0; j < colLength; j++) {
+                    // Colocar os valores de result
+                    matrixstring += matrix[i, j].ToString() + " ";
+                }
+                // Colocar nova linha 
+                matrixstring += Environment.NewLine + Environment.NewLine;
+            }
+            // Mostrar resultado
+            Console.WriteLine(matrixstring);
+        }
+        //
+
+        // Método para mostrar o vector 
+        private static void PrintVector() {
+            // Tamanho da linha
+            int rowLength = vector.GetLength(0);
+            // Tamanho da coluna
+            int colLength = vector.GetLength(1);
+            // Resultado
+            string matrixstring = "";
+
+            for (int i = 0; i < rowLength; i++) {
+                for (int j = 0; j < colLength; j++) {
+                    // Colocar os valores de result
+                    matrixstring += vector[i, j].ToString() + " ";
+                }
+                // Colocar nova linha 
+                matrixstring += Environment.NewLine + Environment.NewLine;
+            }
+            // Mostrar resultado
+            Console.WriteLine(matrixstring);
         }
         //
     }
