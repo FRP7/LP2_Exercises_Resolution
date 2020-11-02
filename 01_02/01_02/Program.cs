@@ -12,6 +12,8 @@ namespace _01_02
         private static float[,] result { get; set; }
         // Número de colunas da matriz
         private static int matrixcolumns { get; set; }
+        // Número de linhas da matriz
+        private static int matrixlines { get; set; }
 
         private static void Main(string[] args) {
             // Método para criar a matriz
@@ -30,8 +32,6 @@ namespace _01_02
         private static void ConstructMatrix() {
             // Input do user para definir o número de linhas
             string inputmatrixlines;
-            // Número de linhas da matriz
-            int matrixlines;
             // Input do user para definir o número de colunas da matriz
             string inputmatrixcolumns;
 
@@ -77,7 +77,12 @@ namespace _01_02
         // Método para criar o vetor
         private static void ConstructVector() {
             // Criar o vetor
-            vector = new float[matrixcolumns, 1];
+            if (matrixcolumns > matrixlines) {
+                vector = new float[matrixcolumns, 1];
+            }
+            else if (matrixcolumns < matrixlines) {
+                vector = new float[matrixlines, 1];
+            }
             Console.WriteLine($"O vector tem {vector.Length} elementos");
             //
 
@@ -88,14 +93,27 @@ namespace _01_02
             float value;
 
             // Preencher os valores
-            for (int i = 0; i < matrixcolumns; i++) {
-                Console.WriteLine("Insere um número: ");
-                // Input do user do valor
-                userinput = Console.ReadLine();
-                // Converter o input para int
-                value = float.Parse(userinput);
-                // Colocar na linha
-                vector[i, 0] = value;
+            if (matrixcolumns > matrixlines) {
+                for (int i = 0; i < matrixcolumns; i++) {
+                    Console.WriteLine("Insere um número: ");
+                    // Input do user do valor
+                    userinput = Console.ReadLine();
+                    // Converter o input para int
+                    value = float.Parse(userinput);
+                    // Colocar na linha
+                    vector[i, 0] = value;
+                }
+            }
+            else if (matrixcolumns < matrixlines) {
+                for (int i = 0; i < matrixlines; i++) {
+                    Console.WriteLine("Insere um número: ");
+                    // Input do user do valor
+                    userinput = Console.ReadLine();
+                    // Converter o input para int
+                    value = float.Parse(userinput);
+                    // Colocar na linha
+                    vector[i, 0] = value;
+                }
             }
             //
         }
@@ -107,41 +125,59 @@ namespace _01_02
             // Index do vetor
             int vectorindex = 0;
 
-            // Multiplicar os valores da matriz com o vetor
-            for (int n = 0; n < matrix.GetLength(0); n++) {
-                for (int i = 0; i < matrix.GetLength(1); i++) {
-                    for (int j = 0; i < vector.GetLength(0); i++) {
-                        matrix[n, i] = matrix[n, i]
-                            * vector[vectorindex, 0];
-                        vectorindex++;
-                    }
+            if (matrixcolumns > matrixlines) {
+                // Multiplicar os valores da matriz com o vetor
+                for (int n = 0; n < matrix.GetLength(0); n++) {
+                    for (int i = 0; i < matrix.GetLength(1); i++) {
+                        for (int j = 0; i < vector.GetLength(0); i++) {
+                            matrix[n, i] = matrix[n, i]
+                                * vector[vectorindex, 0];
+                            vectorindex++;
+                        }
 
+                    }
+                    // Voltar o index do vetor a zero
+                    vectorindex = default;
                 }
-                // Voltar o index do vetor a zero
-                vectorindex = default;
+                //
             }
-            //
+            else if (matrixcolumns < matrixlines) {
+                // Multiplicar os valores da matriz com o vetor
+                for (int n = 0; n < matrix.GetLength(1); n++) {
+                    for (int i = 0; i < matrix.GetLength(0); i++) {
+                        for (int j = 0; i < vector.GetLength(0); i++) {
+                            matrix[i, n] = matrix[i, n]
+                                * vector[vectorindex, 0];
+                            vectorindex++;
+                        }
+
+                    }
+                    // Voltar o index do vetor a zero
+                    vectorindex = default;
+                }
+                //
+            }
         }
         //
 
         // Método para somar os valores da matriz
         private static void Sum() {
             // Definir o tamanho do result
-            result = new float[matrix.GetLength(0), 1];
+                result = new float[matrix.GetLength(0), 1];
             // Guardar soma para meter no result
             float sum;
 
-            // Somar os valores da matriz
-            for (int j = 0; j < matrix.GetLength(0); j++) {
-                // Voltar a soma a zero
-                sum = default;
-                for (int i = 0; i < matrix.GetLength(1); i++) {
-                    sum = sum + matrix[j, i];
+                // Somar os valores da matriz
+                for (int j = 0; j < matrix.GetLength(0); j++) {
+                    // Voltar a soma a zero
+                    sum = default;
+                    for (int i = 0; i < matrix.GetLength(1); i++) {
+                        sum = sum + matrix[j, i];
+                    }
+                    // Colocar na linha
+                    result[j, 0] = sum;
                 }
-                // Colocar na linha
-                result[j, 0] = sum;
-            }
-            //
+                //
         }
         //
 
