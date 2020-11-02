@@ -12,11 +12,8 @@ namespace Checker
         // Número de colunas da array
         private static int arraycolumns;
         //
-        // Valores que serão depois colocados na array final
+        // Array final
         private static int[,] values;
-        //
-        // Array que vai ser utilizada para expor a array final
-        private static int[,] print;
         //
 
         public Checker() {
@@ -79,13 +76,15 @@ namespace Checker
                 for (int x = 0; x < arraylines; x++) {
                     for (int y = 0; y < arraycolumns; y++) {
                         while (value == 0) {
-                            Console.WriteLine("Insere um valor");
+                            Console.WriteLine($"Insere um valor na" +
+                                $" linha {x + 1} na coluna {y + 1}");
                             // Input do user
                             userinput = Console.ReadLine();
                             //
                             // Converter o input para int e colocar na array
                             if (Int32.TryParse(userinput, out value)) {
                                 values[x, y] = value;
+                                PrintArray();
                                 //
                             }
                             else {
@@ -122,8 +121,6 @@ namespace Checker
             int[,] x = new int[arraylines, arraycolumns];
             // Definir os valores da array x
             x = values;
-            // Definir os valores da array de exposição
-            print = x;
             // Converter para int o valor que o user quer que seja procurado
             int y = Convert.ToInt32(userinput);
             // Contar a quantidade de valores seguidos na array x
@@ -234,10 +231,10 @@ namespace Checker
         // Método para mostrar a array
         private static void PrintArray() {
             // Tamanho da linha
-            int rowLength = print.GetLength(0);
+            int rowLength = values.GetLength(0);
             //
             // Tamanho da coluna
-            int colLength = print.GetLength(1);
+            int colLength = values.GetLength(1);
             //
             // Mostrar a array:
             string arrayString = "";
@@ -245,7 +242,7 @@ namespace Checker
             for (int i = 0; i < rowLength; i++) {
                 for (int j = 0; j < colLength; j++) {
                     // Colocar os valores da array
-                    arrayString += string.Format("{0} ", print[i, j]);
+                    arrayString += string.Format("{0} ", values[i, j]);
                     //
                 }
                 // Colocar nova linha
