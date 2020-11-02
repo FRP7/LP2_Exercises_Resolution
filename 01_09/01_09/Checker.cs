@@ -6,11 +6,11 @@ namespace Checker
         // Input do user
         private static string userinput;
         //
-        // Altura da array
-        private static int arrayheight;
+        // Número de linhas da array
+        private static int arraylines;
         //
-        // Comprimento da array
-        private static int arraywidth;
+        // Número de colunas da array
+        private static int arraycolumns;
         //
         // Valores que serão depois colocados na array final
         private static int[,] values;
@@ -23,23 +23,23 @@ namespace Checker
             // Input do user
             userinput = Console.ReadLine();
             //
-            // Converter o input para int e colocar na arrayheight
-            arrayheight = Convert.ToInt32(userinput);
+            // Converter o input para int e colocar na arraylines
+            arraylines = Convert.ToInt32(userinput);
             //
             Console.WriteLine("Qual é o comprimento da array?");
             // Input do user
             userinput = Console.ReadLine();
             //
-            // Converter o input para int e colocar na arraywidth
-            arraywidth = Convert.ToInt32(userinput);
+            // Converter o input para int e colocar na arraycolumns
+            arraycolumns = Convert.ToInt32(userinput);
             //
             // Definir o tamanho da array values
-            values = new int[arrayheight, arraywidth];
+            values = new int[arraylines, arraycolumns];
             //
-            Console.WriteLine($"Tem {arrayheight * arraywidth} slots");
+            Console.WriteLine($"Tem {arraylines * arraycolumns} slots");
             // Pedir os valores e colocar na array values
-            for (int x = 0; x < arrayheight; x++) {
-                for (int y = 0; y < arraywidth; y++) {
+            for (int x = 0; x < arraylines; x++) {
+                for (int y = 0; y < arraycolumns; y++) {
                     Console.WriteLine("Insere um valor");
                     // Input do user
                     userinput = Console.ReadLine();
@@ -75,7 +75,7 @@ namespace Checker
          */
         private static bool Check() {
             // Definir o tamanho da array onde vai ser analisada
-            int[,] x = new int[arrayheight, arraywidth];
+            int[,] x = new int[arraylines, arraycolumns];
             // Definir os valores da array x
             x = values;
             // Definir os valores da array de exposição
@@ -94,7 +94,8 @@ namespace Checker
                 sum = default;
                 //
                 for (int j = 0; j < x.GetLength(1); j++) {
-                    // Verificar se existe um valor igual ao que o user escolheu
+                    /* Verificar se existe um valor igual ao que
+                     * o user escolheu */
                     if (x[n, j] == y) {
                         // Soma
                         sum++;
@@ -116,7 +117,8 @@ namespace Checker
                 sum = default;
                 //
                 for (int n = 0; n < x.GetLength(0); n++) {
-                    // Verificar se existe um valor igual ao que o user escolheu
+                    /* Verificar se existe um valor igual ao que o 
+                     * user escolheu */
                     if (x[n, j] == y) {
                         // Soma
                         sum++;
@@ -132,10 +134,12 @@ namespace Checker
             }
             ///
             sum = default;
-            // Verificar linhas diagonais cima para baixo, esquerda para direita
+            /* Verificar linhas diagonais cima para baixo, 
+             * esquerda para direita */
             for (int n = 0; n < 1; n++) {
                 for (int j = 0; j < x.GetLength(1); j++) {
-                    // Verificar se existe um valor igual ao que o user escolheu
+                    /* Verificar se existe um valor igual ao que o
+                     * user escolheu */
                     if (x[j, j] == y) {
                         // Soma
                         sum++;
@@ -153,10 +157,12 @@ namespace Checker
             // Retomar a soma a zero
             sum = default;
             //
-            // Verificar linhas diagonais cima para baixo, direita para esquerda
+            /* Verificar linhas diagonais cima para baixo, direita para 
+            esquerda*/
             for (int n = 0; n < 1; n++) {
                 for (int j = x.GetLength(1) - 1; j >= 0; j--) {
-                    // Verificar se existe um valor igual ao que o user escolheu
+                    /* Verificar se existe um valor igual ao que o user 
+                    escolheu*/
                     if (x[index, j] == y) {
                         sum++;
                     }
