@@ -13,7 +13,7 @@ namespace Checker
         private static int arraycolumns;
         //
         // Array final
-        private static int[,] values;
+        private static float[,] values;
         //
 
         public Checker() {
@@ -39,7 +39,7 @@ namespace Checker
             bool isvalue = false;
             //
             // O valor do input do user
-            int value = 0;
+            float value = 0f;
             //
 
             // Definir o número de linhas
@@ -75,7 +75,7 @@ namespace Checker
             //
 
             // Definir o tamanho da array values
-            values = new int[arraylines, arraycolumns];
+            values = new float[arraylines, arraycolumns];
             //
 
             Console.WriteLine($"Tem {arraylines * arraycolumns} slots");
@@ -90,7 +90,7 @@ namespace Checker
                             userinput = Console.ReadLine();
                             //
                             // Converter o input para int e colocar na array
-                            if (Int32.TryParse(userinput, out value)) {
+                            if (float.TryParse(userinput, out value)) {
                                 values[x, y] = value;
                                 PrintArray();
                                 //
@@ -126,17 +126,15 @@ namespace Checker
          */
         private bool Check() {
             // Definir o tamanho da array onde vai ser analisada
-            int[,] x = new int[arraylines, arraycolumns];
+            float[,] x = new float[arraylines, arraycolumns];
             // Definir os valores da array x
             x = values;
             // Converter para int o valor que o user quer que seja procurado
-            int y = Convert.ToInt32(userinput);
+            float y = float.Parse(userinput);
             // Contar a quantidade de valores seguidos na array x
             int sum = 0;
             // Verificar se tem quatro valores seguidos
             bool isfour = false;
-            // Index 
-            int index = 0;
 
             // Verificar linhas horizontais
             for (int n = 0; n < x.GetLength(0); n++) {
