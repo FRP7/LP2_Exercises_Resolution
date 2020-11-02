@@ -29,10 +29,18 @@ namespace Checker
             // Nova instância de Checker
             Checker _check;
             //
+            // Verificar se o número de linhas da matriz está definido
             bool ismatrixline = false;
+            //
+            // Verificar se o número de colunas da matriz está definido
             bool ismatrixcolumn = false;
+            //
+            // Verificar se os elementos estão preenchidos
             bool isvalue = false;
+            //
+            // O valor do input do user
             int value = 0;
+            //
 
             // Definir o número de linhas
             while (ismatrixline == false) {
