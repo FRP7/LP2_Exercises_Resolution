@@ -158,6 +158,9 @@ namespace _01_02
             else if (matrixcolumns < matrixlines) {
                 vector = new float[matrixlines, 1];
             }
+            else {
+                vector = new float[matrixcolumns, 1];
+            }
             Console.WriteLine($"O vector tem {vector.Length} elementos");
             //
 
