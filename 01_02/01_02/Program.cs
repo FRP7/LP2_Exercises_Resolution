@@ -35,45 +35,69 @@ namespace _01_02
             // Input do user para definir o número de colunas da matriz
             string inputmatrixcolumns;
 
-            // Definir o o número de linhas da matriz
-            Console.WriteLine("Qual é o número de linhas da matriz?");
-            // Input do user para definir o número de linhas
-            inputmatrixlines = Console.ReadLine();
-            // Converter o input para int
-            matrixlines = Convert.ToInt32(inputmatrixlines);
-            Console.WriteLine("Qual o número de colunas da matriz?");
-            // Input do user para definir o número de colunas
-            inputmatrixcolumns = Console.ReadLine();
-            // Converter o input para int
-            matrixcolumns = Convert.ToInt32(inputmatrixcolumns);
-            // Criar a matriz
+            bool ismatrixlines = false;
+            bool ismatrixcolumns = false;
+
+            int matrixlinevalue;
+            int matrixcolumnvalue;
+
+            while(ismatrixlines == false) {
+                Console.WriteLine("Qual é o número de linhas da matriz?");
+                inputmatrixlines = Console.ReadLine();
+                if(Int32.TryParse(inputmatrixlines, out matrixlinevalue)) {
+                    matrixlines = matrixlinevalue;
+                    ismatrixlines = true;
+                }
+                else {
+                    Console.WriteLine("Valor inválido, tente de novo.");
+                }
+            }
+
+            while (ismatrixcolumns == false) {
+                Console.WriteLine("Qual é o número de colunas da matriz?");
+                inputmatrixcolumns = Console.ReadLine();
+                if (Int32.TryParse(inputmatrixcolumns, out matrixcolumnvalue)) {
+                    matrixcolumns = matrixcolumnvalue;
+                    ismatrixcolumns = true;
+                } else {
+                    Console.WriteLine("Valor inválido, tente de novo.");
+                }
+            }
+
             matrix = new float[matrixlines, matrixcolumns];
             Console.WriteLine($"A matriz tem {matrix.Length} elementos");
-            //
 
             // Definir os valores
             // Input do user
             string userinput;
             // Valor
-            float value;
+            float value = 0f;
 
-            // Preencher os valores
-            for (int j = 0; j < matrixlines; j++) {
-                for (int i = 0; i < matrixcolumns; i++) {
-                    Console.WriteLine($"Insere um número na linha {j + 1} na coluna {i + 1}: ");
-                    if(j == 0 && i == 0) {
-                        PrintMatrix();
+            bool isvalue = false;
+
+            while(isvalue == false) {
+                for (int j = 0; j < matrixlines; j++) {
+                    for (int i = 0; i < matrixcolumns; i++) {
+                        while (value == 0f) {
+                            Console.WriteLine($"Insere um número na linha {j + 1} na coluna {i + 1}: ");
+                            if (j == 0 && i == 0) {
+                                PrintMatrix();
+                            }
+                            // User input do valor
+                            userinput = Console.ReadLine();
+                            if (float.TryParse(userinput, out value)) {
+                                // Colocar na linha
+                                matrix[j, i] = value;
+                                PrintMatrix();
+                            } else {
+                                Console.WriteLine("Valor inválido, tente de novo");
+                            }
+                        }
+                        value = default;
                     }
-                    // User input do valor
-                    userinput = Console.ReadLine();
-                    // Converter o input para int
-                    value = float.Parse(userinput);
-                    // Colocar na linha
-                    matrix[j, i] = value;
-                    PrintMatrix();
+                    isvalue = true;
                 }
             }
-            //
             //
         }
         //
