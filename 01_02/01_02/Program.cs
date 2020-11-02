@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MatrixMultiplier
+namespace _01_02
 {
     class Program
     {
@@ -38,7 +38,7 @@ namespace MatrixMultiplier
             // Definir o tamanho
             Console.WriteLine("Qual é a altura da matriz?");
             // Input do user para definir a altura
-            inputmatrixheight = Console.ReadLine(); 
+            inputmatrixheight = Console.ReadLine();
             // Converter o input para int
             matrixheight = Convert.ToInt32(inputmatrixheight);
             Console.WriteLine("Qual é a largura da matriz?");
@@ -109,13 +109,13 @@ namespace MatrixMultiplier
 
             // Multiplicar os valores da matriz com o vetor
             for (int n = 0; n < matrix.GetLength(0); n++) {
-                for (int i = 0; i < matrix.GetLength(1); i++) { 
+                for (int i = 0; i < matrix.GetLength(1); i++) {
                     for (int j = 0; i < vector.GetLength(0); i++) {
                         matrix[n, i] = matrix[n, i]
                             * vector[vectorindex, 0];
                         vectorindex++;
                     }
-                   
+
                 }
                 // Voltar o index do vetor a zero
                 vectorindex = default;
@@ -127,9 +127,9 @@ namespace MatrixMultiplier
         // Método para somar os valores da matriz
         private static void Sum() {
             // Definir o tamanho do result
-            result = new int[matrix.GetLength(0), 1]; 
+            result = new int[matrix.GetLength(0), 1];
             // Guardar soma para meter no result
-            int sum; 
+            int sum;
 
             // Somar os valores da matriz
             for (int j = 0; j < matrix.GetLength(0); j++) {
@@ -154,8 +154,8 @@ namespace MatrixMultiplier
             // Resultado
             string resultstring = "";
 
-            for(int i = 0; i < rowLength; i++) {
-                for(int j = 0; j < colLength; j++) {
+            for (int i = 0; i < rowLength; i++) {
+                for (int j = 0; j < colLength; j++) {
                     // Colocar os valores de result
                     resultstring += result[i, j].ToString();
                 }
