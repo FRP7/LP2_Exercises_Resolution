@@ -96,6 +96,7 @@ namespace Checker
             bool isfour = false;
             // Index 
             int index = 0;
+
             // Verificar linhas horizontais
             for (int n = 0; n < x.GetLength(0); n++) {
                 // Retoma a zero quando começa
@@ -145,20 +146,22 @@ namespace Checker
             /* Verificar linhas diagonais cima para baixo, 
              * esquerda para direita */
             for (int n = 0; n < 1; n++) {
-                for (int j = 0; j < x.GetLength(1); j++) {
-                    /* Verificar se existe um valor igual ao que o
-                     * user escolheu */
-                    if (x[j, j] == y) {
-                        // Soma
-                        sum++;
+                for(int z = 0; z < x.GetLength(0); z++) {
+                    for (int j = 0; j < x.GetLength(1); j++) {
+                        /* Verificar se existe um valor igual ao que o
+                         * user escolheu */
+                        if (x[z, j] == y) {
+                            // Soma
+                            sum++;
+                            //
+                        }
+                        //
+                        // Verificar se existe quatro números seguidos
+                        if (sum >= 4) {
+                            isfour = true;
+                        }
                         //
                     }
-                    //
-                    // Verificar se existe quatro números seguidos
-                    if (sum >= 4) {
-                        isfour = true;
-                    }
-                    //
                 }
             }
             //
@@ -168,21 +171,20 @@ namespace Checker
             /* Verificar linhas diagonais cima para baixo, direita para 
             esquerda*/
             for (int n = 0; n < 1; n++) {
-                for (int j = x.GetLength(1) - 1; j >= 0; j--) {
-                    /* Verificar se existe um valor igual ao que o user 
-                    escolheu*/
-                    if (x[index, j] == y) {
-                        sum++;
+                for (int z = 0; z < x.GetLength(0); z++) {
+                    for (int j = x.GetLength(1) - 1; j >= 0; j--) {
+                        /* Verificar se existe um valor igual ao que o user 
+                        escolheu*/
+                        if (x[z, j] == y) {
+                            sum++;
+                        }
+                        //
+                        // Verificar se existe quatro números seguidos
+                        if (sum >= 4) {
+                            isfour = true;
+                        }
+                        //
                     }
-                    //
-                    // Verificar se existe quatro números seguidos
-                    if (sum >= 4) {
-                        isfour = true;
-                    }
-                    //
-                    //Incrementar o index
-                    index++;
-                    //
                 }
             }
             //
