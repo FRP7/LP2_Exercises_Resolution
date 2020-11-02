@@ -11,7 +11,7 @@ namespace _01_02
         // Resultado final 
         private static int[,] result { get; set; }
         // Comprimento da matriz
-        private static int matrixwidth { get; set; }
+        private static int matrixcolumns { get; set; }
 
         private static void Main(string[] args) {
             // Método para criar a matriz
@@ -28,26 +28,26 @@ namespace _01_02
 
         // Método para criar a matriz
         private static void ConstructMatrix() {
-            // Input do user para definir a altura da matriz
-            string inputmatrixheight;
-            // Altura da matriz
-            int matrixheight;
-            // Input do user para definir o comprimento da matriz
-            string inputmatrixwidth;
+            // Input do user para definir o número de linhas
+            string inputmatrixlines;
+            // Número de linhas da matriz
+            int matrixlines;
+            // Input do user para definir o número de colunas da matriz
+            string inputmatrixcolumns;
 
-            // Definir o tamanho
-            Console.WriteLine("Qual é a altura da matriz?");
-            // Input do user para definir a altura
-            inputmatrixheight = Console.ReadLine();
+            // Definir o o número de linhas da matriz
+            Console.WriteLine("Qual é o número de linhas da matriz?");
+            // Input do user para definir o número de linhas
+            inputmatrixlines = Console.ReadLine();
             // Converter o input para int
-            matrixheight = Convert.ToInt32(inputmatrixheight);
-            Console.WriteLine("Qual é a largura da matriz?");
-            // Input do user para definir o comprimento
-            inputmatrixwidth = Console.ReadLine();
+            matrixlines = Convert.ToInt32(inputmatrixlines);
+            Console.WriteLine("Qual o número de colunas da matriz?");
+            // Input do user para definir o número de colunas
+            inputmatrixcolumns = Console.ReadLine();
             // Converter o input para int
-            matrixwidth = Convert.ToInt32(inputmatrixwidth);
+            matrixcolumns = Convert.ToInt32(inputmatrixcolumns);
             // Criar a matriz
-            matrix = new int[matrixheight, matrixwidth];
+            matrix = new int[matrixlines, matrixcolumns];
             Console.WriteLine($"A matriz tem {matrix.Length} casas");
             //
 
@@ -58,8 +58,8 @@ namespace _01_02
             int value;
 
             // Preencher os valores
-            for (int j = 0; j < matrixheight; j++) {
-                for (int i = 0; i < matrixwidth; i++) {
+            for (int j = 0; j < matrixlines; j++) {
+                for (int i = 0; i < matrixcolumns; i++) {
                     Console.WriteLine("Insere um número: ");
                     // User input do valor
                     userinput = Console.ReadLine();
@@ -77,7 +77,7 @@ namespace _01_02
         // Método para criar o vetor
         private static void ConstructVector() {
             // Criar o vetor
-            vector = new int[matrixwidth, 1];
+            vector = new int[matrixcolumns, 1];
             Console.WriteLine($"O vector tem {vector.Length} casas");
             //
 
@@ -88,7 +88,7 @@ namespace _01_02
             int value;
 
             // Preencher os valores
-            for (int i = 0; i < matrixwidth; i++) {
+            for (int i = 0; i < matrixcolumns; i++) {
                 Console.WriteLine("Insere um número: ");
                 // Input do user do valor
                 userinput = Console.ReadLine();
