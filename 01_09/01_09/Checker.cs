@@ -89,7 +89,8 @@ namespace Checker
                             // Input do user
                             userinput = Console.ReadLine();
                             //
-                            // Converter o input para int e colocar na array
+                            /* Tentar converter o input para float
+                             * e colocar na array */
                             if (float.TryParse(userinput, out value)) {
                                 values[x, y] = value;
                                 PrintArray();
@@ -127,14 +128,19 @@ namespace Checker
         private bool Check() {
             // Definir o tamanho da array onde vai ser analisada
             float[,] x = new float[arraylines, arraycolumns];
+            //
             // Definir os valores da array x
             x = values;
+            //
             // Converter para int o valor que o user quer que seja procurado
             float y = float.Parse(userinput);
+            //
             // Contar a quantidade de valores seguidos na array x
             int sum = 0;
+            //
             // Verificar se tem quatro valores seguidos
             bool isfour = false;
+            //
 
             // Verificar linhas horizontais
             for (int n = 0; n < x.GetLength(0); n++) {
@@ -233,6 +239,7 @@ namespace Checker
             } else {
                 return false;
             }
+            //
         }
         // Método para mostrar a array
         private static void PrintArray() {
@@ -258,6 +265,7 @@ namespace Checker
             }
             // Mostrar a array
             Console.WriteLine(arrayString);
+            //
         }
         //
     }
