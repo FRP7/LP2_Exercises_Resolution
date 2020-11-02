@@ -71,6 +71,7 @@ namespace Checker
             // Verificar se o método Check() retoma true
             _check = new Checker();
             //
+
             // Mostrar a array
             PrintArray();
             //
