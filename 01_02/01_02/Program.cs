@@ -5,12 +5,12 @@ namespace _01_02
     class Program
     {
         // Matriz
-        private static int[,] matrix { get; set; }
+        private static float[,] matrix { get; set; }
         // Vetor
-        private static int[,] vector { get; set; }
+        private static float[,] vector { get; set; }
         // Resultado final 
-        private static int[,] result { get; set; }
-        // Comprimento da matriz
+        private static float[,] result { get; set; }
+        // Número de colunas da matriz
         private static int matrixcolumns { get; set; }
 
         private static void Main(string[] args) {
@@ -47,7 +47,7 @@ namespace _01_02
             // Converter o input para int
             matrixcolumns = Convert.ToInt32(inputmatrixcolumns);
             // Criar a matriz
-            matrix = new int[matrixlines, matrixcolumns];
+            matrix = new float[matrixlines, matrixcolumns];
             Console.WriteLine($"A matriz tem {matrix.Length} elementos");
             //
 
@@ -55,7 +55,7 @@ namespace _01_02
             // Input do user
             string userinput;
             // Valor
-            int value;
+            float value;
 
             // Preencher os valores
             for (int j = 0; j < matrixlines; j++) {
@@ -64,7 +64,7 @@ namespace _01_02
                     // User input do valor
                     userinput = Console.ReadLine();
                     // Converter o input para int
-                    value = Convert.ToInt32(userinput);
+                    value = float.Parse(userinput);
                     // Colocar na linha
                     matrix[j, i] = value;
                 }
@@ -77,7 +77,7 @@ namespace _01_02
         // Método para criar o vetor
         private static void ConstructVector() {
             // Criar o vetor
-            vector = new int[matrixcolumns, 1];
+            vector = new float[matrixcolumns, 1];
             Console.WriteLine($"O vector tem {vector.Length} elementos");
             //
 
@@ -85,7 +85,7 @@ namespace _01_02
             // Input do user
             string userinput;
             // Valor
-            int value;
+            float value;
 
             // Preencher os valores
             for (int i = 0; i < matrixcolumns; i++) {
@@ -93,7 +93,7 @@ namespace _01_02
                 // Input do user do valor
                 userinput = Console.ReadLine();
                 // Converter o input para int
-                value = Convert.ToInt32(userinput);
+                value = float.Parse(userinput);
                 // Colocar na linha
                 vector[i, 0] = value;
             }
@@ -127,9 +127,9 @@ namespace _01_02
         // Método para somar os valores da matriz
         private static void Sum() {
             // Definir o tamanho do result
-            result = new int[matrix.GetLength(0), 1];
+            result = new float[matrix.GetLength(0), 1];
             // Guardar soma para meter no result
-            int sum;
+            float sum;
 
             // Somar os valores da matriz
             for (int j = 0; j < matrix.GetLength(0); j++) {
