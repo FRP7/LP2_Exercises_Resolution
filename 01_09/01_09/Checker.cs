@@ -32,34 +32,70 @@ namespace Checker
             // Nova instância de Checker
             Checker _check;
             //
-            Console.WriteLine("Qual é a altura da array?");
-            // Input do user
-            userinput = Console.ReadLine();
+            bool ismatrixline = false;
+            bool ismatrixcolumn = false;
+            bool isvalue = false;
+            int value = 0;
+
+            // Definir o número de linhas
+            while (ismatrixline == false) {
+                Console.WriteLine("Qual é o número de linhas da matriz?");
+                // User Input
+                userinput = Console.ReadLine();
+                //
+                // Tentar convertar o input para int
+                if (Int32.TryParse(userinput, out arraylines)) {
+                    ismatrixline = true;
+                } else {
+                    Console.WriteLine("Valor inválido, tente de novo.");
+                }
+                //
+            }
             //
-            // Converter o input para int e colocar na arraylines
-            arraylines = Convert.ToInt32(userinput);
+
+            // Definir o número de linhas
+            while (ismatrixcolumn == false) {
+                Console.WriteLine("Qual é o número de colunas da matriz?");
+                // User Input
+                userinput = Console.ReadLine();
+                //
+                // Tentar convertar o input para int
+                if (Int32.TryParse(userinput, out arraycolumns)) {
+                    ismatrixcolumn = true;
+                } else {
+                    Console.WriteLine("Valor inválido, tente de novo.");
+                }
+                //
+            }
             //
-            Console.WriteLine("Qual é o comprimento da array?");
-            // Input do user
-            userinput = Console.ReadLine();
-            //
-            // Converter o input para int e colocar na arraycolumns
-            arraycolumns = Convert.ToInt32(userinput);
-            //
+
             // Definir o tamanho da array values
             values = new int[arraylines, arraycolumns];
             //
+
             Console.WriteLine($"Tem {arraylines * arraycolumns} slots");
             // Pedir os valores e colocar na array values
-            for (int x = 0; x < arraylines; x++) {
-                for (int y = 0; y < arraycolumns; y++) {
-                    Console.WriteLine("Insere um valor");
-                    // Input do user
-                    userinput = Console.ReadLine();
-                    //
-                    // Converter o input para int e colocar na array
-                    values[x, y] = Convert.ToInt32(userinput);
-                    //
+            while (isvalue == false) {
+                for (int x = 0; x < arraylines; x++) {
+                    for (int y = 0; y < arraycolumns; y++) {
+                        while (value == 0) {
+                            Console.WriteLine("Insere um valor");
+                            // Input do user
+                            userinput = Console.ReadLine();
+                            //
+                            // Converter o input para int e colocar na array
+                            if (Int32.TryParse(userinput, out value)) {
+                                values[x, y] = value;
+                                //
+                            }
+                            else {
+                                Console.WriteLine
+                                    ("Valor inválido, tente de novo");
+                            }
+                        }
+                        value = default;
+                    }
+                    isvalue = true;
                 }
             }
             //
