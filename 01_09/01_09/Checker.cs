@@ -18,7 +18,20 @@ namespace Checker
         // Array que vai ser utilizada para expor a array final
         private static int[,] print;
         //
+
+        public Checker() {
+            // Verificar se o método Check() retoma true
+            if (Check() == true) {
+                Console.WriteLine("Existe linha");
+            } else {
+                Console.WriteLine("Não existe linha");
+            }
+            //
+        }
         private static void Main(string[] args) {
+            // Nova instância de Checker
+            Checker _check;
+            //
             Console.WriteLine("Qual é a altura da array?");
             // Input do user
             userinput = Console.ReadLine();
@@ -54,15 +67,9 @@ namespace Checker
             // Input do user
             userinput = Console.ReadLine();
             //
-            // Nova instância de Checker
-            Checker _check;
-            //
+
             // Verificar se o método Check() retoma true
-            if (Check() == true) {
-                Console.WriteLine("Existe linha");
-            } else {
-                Console.WriteLine("Não existe linha");
-            }
+            _check = new Checker();
             //
             // Mostrar a array
             PrintArray();
@@ -73,7 +80,7 @@ namespace Checker
          * para procurar.
          * Retoma true se encontrar.
          */
-        private static bool Check() {
+        private bool Check() {
             // Definir o tamanho da array onde vai ser analisada
             int[,] x = new int[arraylines, arraycolumns];
             // Definir os valores da array x
