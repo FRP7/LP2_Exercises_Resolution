@@ -118,37 +118,51 @@ namespace _01_02
             // Input do user
             string userinput;
             // Valor
-            float value;
+            float value = 0f;
 
             // Preencher os valores
             if (matrixcolumns > matrixlines) {
                 for (int i = 0; i < matrixcolumns; i++) {
-                    Console.WriteLine($"Insere um número na linha {i + 1} na coluna 1: ");
-                    if(i == 0) {
-                        PrintVector();
-                    }
-                    // Input do user do valor
-                    userinput = Console.ReadLine();
-                    // Converter o input para int
-                    value = float.Parse(userinput);
-                    // Colocar na linha
-                    vector[i, 0] = value;
-                    PrintVector();
-                }
-            }
-            else if (matrixcolumns < matrixlines) {
-                for (int i = 0; i < matrixlines; i++) {
-                    Console.WriteLine($"Insere um número na linha {i + 1} na coluna 1: ");
+                    while (value == 0f) { 
+                        Console.WriteLine($"Insere um número na linha {i + 1} na coluna 1: ");
                     if (i == 0) {
                         PrintVector();
                     }
                     // Input do user do valor
                     userinput = Console.ReadLine();
                     // Converter o input para int
-                    value = float.Parse(userinput);
-                    // Colocar na linha
-                    vector[i, 0] = value;
-                    PrintVector();
+                    if(float.TryParse(userinput, out value)) {
+                            value = float.Parse(userinput);
+                            // Colocar na linha
+                            vector[i, 0] = value;
+                            PrintVector();
+                        } else {
+                            Console.WriteLine("Valor inválido, tente de novo");
+                        }
+                }
+                    value = default;
+                }
+            }
+            else if (matrixcolumns < matrixlines) {
+                for (int i = 0; i < matrixlines; i++) {
+                    while (value == 0f) {
+                        Console.WriteLine($"Insere um número na linha {i + 1} na coluna 1: ");
+                        if (i == 0) {
+                            PrintVector();
+                        }
+                        // Input do user do valor
+                        userinput = Console.ReadLine();
+                        // Converter o input para int
+                        if (float.TryParse(userinput, out value)) {
+                            value = float.Parse(userinput);
+                            // Colocar na linha
+                            vector[i, 0] = value;
+                            PrintVector();
+                        } else {
+                            Console.WriteLine("Valor inválido, tente de novo");
+                        }
+                    }
+                    value = default;
                 }
             }
             //
