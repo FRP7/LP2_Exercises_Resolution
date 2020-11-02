@@ -48,7 +48,7 @@ namespace _01_02
             matrixcolumns = Convert.ToInt32(inputmatrixcolumns);
             // Criar a matriz
             matrix = new int[matrixlines, matrixcolumns];
-            Console.WriteLine($"A matriz tem {matrix.Length} casas");
+            Console.WriteLine($"A matriz tem {matrix.Length} elementos");
             //
 
             // Definir os valores
@@ -78,7 +78,7 @@ namespace _01_02
         private static void ConstructVector() {
             // Criar o vetor
             vector = new int[matrixcolumns, 1];
-            Console.WriteLine($"O vector tem {vector.Length} casas");
+            Console.WriteLine($"O vector tem {vector.Length} elementos");
             //
 
             // Definir os valores
