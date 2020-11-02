@@ -60,7 +60,10 @@ namespace _01_02
             // Preencher os valores
             for (int j = 0; j < matrixlines; j++) {
                 for (int i = 0; i < matrixcolumns; i++) {
-                    Console.WriteLine("Insere um número: ");
+                    Console.WriteLine($"Insere um número na linha {j + 1} na coluna {i + 1}: ");
+                    if(j == 0 && i == 0) {
+                        PrintMatrix();
+                    }
                     // User input do valor
                     userinput = Console.ReadLine();
                     // Converter o input para int
@@ -96,7 +99,10 @@ namespace _01_02
             // Preencher os valores
             if (matrixcolumns > matrixlines) {
                 for (int i = 0; i < matrixcolumns; i++) {
-                    Console.WriteLine("Insere um número: ");
+                    Console.WriteLine($"Insere um número na linha {i + 1} na coluna 1: ");
+                    if(i == 0) {
+                        PrintVector();
+                    }
                     // Input do user do valor
                     userinput = Console.ReadLine();
                     // Converter o input para int
@@ -108,7 +114,10 @@ namespace _01_02
             }
             else if (matrixcolumns < matrixlines) {
                 for (int i = 0; i < matrixlines; i++) {
-                    Console.WriteLine("Insere um número: ");
+                    Console.WriteLine($"Insere um número na linha {i + 1} na coluna 1: ");
+                    if (i == 0) {
+                        PrintVector();
+                    }
                     // Input do user do valor
                     userinput = Console.ReadLine();
                     // Converter o input para int
@@ -202,6 +211,7 @@ namespace _01_02
                 resultstring += Environment.NewLine + Environment.NewLine;
             }
             // Mostrar resultado
+            Console.WriteLine("Resultado:");
             Console.WriteLine(resultstring);
         }
         //
@@ -224,6 +234,7 @@ namespace _01_02
                 matrixstring += Environment.NewLine + Environment.NewLine;
             }
             // Mostrar resultado
+            Console.WriteLine("Matriz: ");
             Console.WriteLine(matrixstring);
         }
         //
@@ -246,6 +257,7 @@ namespace _01_02
                 matrixstring += Environment.NewLine + Environment.NewLine;
             }
             // Mostrar resultado
+            Console.WriteLine("Vector: ");
             Console.WriteLine(matrixstring);
         }
         //
