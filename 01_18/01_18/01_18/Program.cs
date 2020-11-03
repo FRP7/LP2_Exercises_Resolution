@@ -6,7 +6,7 @@ namespace _01_18
     class Program
     {
         // Aceder à classe Sort.
-        private static Sort _sort = new Sort();
+        private static CompareClass _sort = new CompareClass();
         //
 
         static void Main(string[] args)
