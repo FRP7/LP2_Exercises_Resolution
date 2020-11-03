@@ -4,22 +4,6 @@ namespace _01_22
 {
     class Sword : GameItem
     {
-        // Enum dos tipos de metal.
-        public enum TypeofMetal
-        {
-            bronze,
-            steel,
-            aluminum
-        }
-        //
-        // Enum do estado da espada.
-        public enum WeaponCondition
-        {
-            broken,
-            medium,
-            fresh
-        }
-        //
         // Variável do nome, o new oculta a herança original.
         public new readonly string name;
         //
