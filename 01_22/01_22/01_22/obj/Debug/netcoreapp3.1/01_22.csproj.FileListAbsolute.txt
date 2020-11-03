@@ -1,0 +1,13 @@
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\bin\Debug\netcoreapp3.1\01_22.exe
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\bin\Debug\netcoreapp3.1\01_22.deps.json
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\bin\Debug\netcoreapp3.1\01_22.runtimeconfig.json
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\bin\Debug\netcoreapp3.1\01_22.runtimeconfig.dev.json
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\bin\Debug\netcoreapp3.1\01_22.dll
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\bin\Debug\netcoreapp3.1\01_22.pdb
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\obj\Debug\netcoreapp3.1\01_22.csprojAssemblyReference.cache
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\obj\Debug\netcoreapp3.1\01_22.AssemblyInfoInputs.cache
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\obj\Debug\netcoreapp3.1\01_22.AssemblyInfo.cs
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\obj\Debug\netcoreapp3.1\01_22.csproj.CoreCompileInputs.cache
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\obj\Debug\netcoreapp3.1\01_22.dll
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\obj\Debug\netcoreapp3.1\01_22.pdb
+C:\Users\frelv\Documents\Github\LP2_Exercises_Resolution\01_22\01_22\01_22\obj\Debug\netcoreapp3.1\01_22.genruntimeconfig.cache
