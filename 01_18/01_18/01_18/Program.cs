@@ -25,20 +25,17 @@ namespace _01_18
             //
 
             // Mostrar as Weapons por ordem decrescente pelo Attack Power.
-            Console.WriteLine(Environment.NewLine);
             Console.WriteLine("Weapons por ordem decrescente pelo Attack Power");
             // Ordenar (ordem decrescente pelo AttackPower)
             weaponlist.Sort();
             //
             foreach (Weapon item in weaponlist)
             {
-                Console.WriteLine(Environment.NewLine);
                 Console.WriteLine($"Attack power: {item.AttackPower}");
                 Console.WriteLine($"Durability: {item.Durability}");
             }
             //
             // Mostrar as Weapons por ordem crescente pela Durability.
-            Console.WriteLine(Environment.NewLine);
             Console.WriteLine("Weapons por ordem crescente pela Durability");
 
             // Ordenar (ordem crescente pela Durability)
@@ -46,7 +43,6 @@ namespace _01_18
             //
             foreach (Weapon item in weaponlist)
             {
-                Console.WriteLine(Environment.NewLine);
                 Console.WriteLine($"Attack power: {item.AttackPower}");
                 Console.WriteLine($"Durability: {item.Durability}");
             }
