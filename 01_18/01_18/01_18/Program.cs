@@ -16,11 +16,11 @@ namespace _01_18
         {
             // O construtor constrói objetos que são colocados na lista.
             weaponlist.Add(new Weapon
-                (name: "Sword", attackPower: 1, durability: 2f));
+                (1, 2f));
             weaponlist.Add(new Weapon
-                (name: "Axe", attackPower: 2, durability: 3f));
+                (2, 3f));
             weaponlist.Add(new Weapon
-                (name: "Mace", attackPower: 3, durability: 4f));
+                (3, 4f));
             //
 
             // Mostrar as Weapons por ordem decrescente pelo Attack Power.
@@ -32,7 +32,6 @@ namespace _01_18
             foreach (Weapon item in weaponlist)
             {
                 Console.WriteLine(Environment.NewLine);
-                Console.WriteLine(item.Name);
                 Console.WriteLine($"Attack power: {item.AttackPower}");
                 Console.WriteLine($"Durability: {item.Durability}");
             }
@@ -47,7 +46,6 @@ namespace _01_18
             foreach (Weapon item in weaponlist)
             {
                 Console.WriteLine(Environment.NewLine);
-                Console.WriteLine(item.Name);
                 Console.WriteLine($"Attack power: {item.AttackPower}");
                 Console.WriteLine($"Durability: {item.Durability}");
             }
