@@ -8,12 +8,13 @@ namespace _01_18
         // Aceder à classe Sort.
         private static Sort _sort = new Sort();
         //
-        // Lista de Weapons.
-        private static List<Weapon> weaponlist = new List<Weapon>();
-        // 
 
         static void Main(string[] args)
-        {
+        { 
+             // Lista de Weapons.
+            List<Weapon> weaponlist = new List<Weapon>();
+            // 
+
             // O construtor constrói objetos que são colocados na lista.
             weaponlist.Add(new Weapon
                 (1, 2f));
