@@ -4,20 +4,20 @@ namespace _01_22
 {
     class Sword : GameItem
     {
-        // Variável do nome, o new oculta a herança original.
-        public new readonly string Name;
+        // Variável do nome
+        public readonly string name;
         //
-        // Variável da descrição, o new oculta a herança original.
-        public new readonly string Description;
+        // Variável da descrição
+        public readonly string description;
         //
         // Variável da dimensão da espada.
-        private int Length { get; set; }
+        private int length { get; set; }
         //
         // Variável do enum TypeofMetal.
-        private TypeofMetal _Typeofmetal;
+        private TypeofMetal typeOfMetal;
         //
         // Variável do enum WeaponCondition.
-        private WeaponCondition _Condition;
+        private WeaponCondition condition;
         //
 
         /* Construtor que define os valores das variáveis e 
@@ -27,12 +27,12 @@ namespace _01_22
             int length, TypeofMetal typeofmetal, WeaponCondition condition)
             : base(name, description)
         {
-            this.Name = name;
-            this.Description = description;
-            this.Description = description;
-            this.Length = length;
-            this._Typeofmetal = typeofmetal;
-            this._Condition = condition;
+            this.name = name;
+            this.description = description;
+            this.description = description;
+            this.length = length;
+            this.typeOfMetal = typeofmetal;
+            this.condition = condition;
             Console.WriteLine($"Name: {name}");
             Console.WriteLine($"Description: {description}");
             Console.WriteLine($"Length: {length}");
