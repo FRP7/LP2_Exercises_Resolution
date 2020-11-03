@@ -34,6 +34,10 @@ namespace _01_18
             {
                 returnvalue = 1;
             }
+            else if (weapon == null)
+            {
+                returnvalue = 1;
+            }
             else
             {
                 returnvalue = 0;
