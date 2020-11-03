@@ -27,9 +27,6 @@ namespace _01_22
             int length, TypeofMetal typeofmetal, WeaponCondition condition)
             : base(name, description)
         {
-            this.name = name;
-            this.description = description;
-            this.description = description;
             this.length = length;
             this.typeOfMetal = typeofmetal;
             this.condition = condition;
