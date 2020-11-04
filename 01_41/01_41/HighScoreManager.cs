@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace _01_41
 {
@@ -24,9 +25,18 @@ namespace _01_41
         }
 
         private void Read() {
-            StreamReader streamreader = new StreamReader("highscores.txt");
+            //StreamReader streamreader = new StreamReader("highscores.txt");
+            string content;
+            string[] lines = File.ReadAllLines("highscores.txt");
+            string[] col = new string[10];
             // Meter o conteúdo do ficheiro na coleção
-            streamreader.Close();
+            foreach(string line in lines) {
+                col = line.Split(',');
+            }
+            //streamreader.Close();
+            foreach(string item in col) {
+                Console.WriteLine(item);
+            }
         }
 
         public void AddScore(string name, float score) {

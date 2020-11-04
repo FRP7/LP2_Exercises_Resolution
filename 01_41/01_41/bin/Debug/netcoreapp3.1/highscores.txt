@@ -1,5 +1,5 @@
-Francisco, 1
-João, 2
-Henrique, 3
-Pedro, 4
-Luís, 5
+Francisco , 1
+Joao , 2
+Henrique , 3
+Pedro , 4
+Luis , 5
