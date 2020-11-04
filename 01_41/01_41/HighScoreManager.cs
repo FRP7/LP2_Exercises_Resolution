@@ -25,16 +25,14 @@ namespace _01_41
         }
 
         private void Read() {
-            string[] lines = File.ReadAllLines("highscores.txt");
-            string[] col = new string[10];
-            // Meter o conteúdo do ficheiro na coleção
-            foreach(string line in lines) {
-                col = (line.Split(','));
-                AddScore(col[0], float.Parse(col[1]));
-                col[0] = default;
-                col[1] = default;
+            string s;
+            string[] lines;
+            StreamReader streamreader = new StreamReader("highscores.txt");
+            while((s = streamreader.ReadLine()) != null) {
+                lines = (s.Split(','));
+                AddScore(lines[0], float.Parse(lines[1]));
             }
-            //AddScore(col[0], float.Parse(col[1]));
+            streamreader.Close();
         }
 
         public void AddScore(string name, float score) {
