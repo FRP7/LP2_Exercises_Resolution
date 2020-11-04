@@ -6,7 +6,7 @@ namespace _01_18
     class Program
     {
         // Aceder à classe Sort.
-        private static CompareClass _sort = new CompareClass();
+        private static CompareWeapon _compareweapon = new CompareWeapon();
         //
 
         static void Main(string[] args)
@@ -39,7 +39,7 @@ namespace _01_18
             Console.WriteLine("Weapons por ordem crescente pela Durability");
 
             // Ordenar (ordem crescente pela Durability)
-            weaponlist.Sort(_sort);
+            weaponlist.Sort(_compareweapon);
             //
             foreach (Weapon item in weaponlist)
             {

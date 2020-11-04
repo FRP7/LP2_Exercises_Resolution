@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace _01_18
 {
-    public class CompareClass : IComparer<Weapon>
+    public class CompareWeapon : IComparer<Weapon>
     {
         // Definir que o Sort() ordena por ordem crescente pela Durability
         public int Compare(Weapon a, Weapon b)
