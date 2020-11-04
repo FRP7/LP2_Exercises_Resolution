@@ -8,19 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\frelv\\.nuget\\packages\\": {}
+    "C:\\Users\\Francisco\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\frelv\\Documents\\Github\\LP2_Exercises_Resolution\\01_18\\01_18\\01_18\\01_18.csproj",
+      "projectUniqueName": "C:\\Users\\Francisco\\Documents\\GitHub\\LP2_Exercises_Resolution\\01_18\\01_18\\01_18\\01_18.csproj",
       "projectName": "01_18",
-      "projectPath": "C:\\Users\\frelv\\Documents\\Github\\LP2_Exercises_Resolution\\01_18\\01_18\\01_18\\01_18.csproj",
-      "packagesPath": "C:\\Users\\frelv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\frelv\\Documents\\Github\\LP2_Exercises_Resolution\\01_18\\01_18\\01_18\\obj\\",
+      "projectPath": "C:\\Users\\Francisco\\Documents\\GitHub\\LP2_Exercises_Resolution\\01_18\\01_18\\01_18\\01_18.csproj",
+      "packagesPath": "C:\\Users\\Francisco\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Francisco\\Documents\\GitHub\\LP2_Exercises_Resolution\\01_18\\01_18\\01_18\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\frelv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Francisco\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,7 +32,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Users\\Francisco\\Downloads": {}
       },
       "frameworks": {
         "netcoreapp3.1": {

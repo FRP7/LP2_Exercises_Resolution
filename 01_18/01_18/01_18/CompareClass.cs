@@ -9,17 +9,17 @@ namespace _01_18
         public int Compare(Weapon a, Weapon b)
         {
             int returnvalue = 0;
-            if (a.Durability > b.Durability)
-            {
-                returnvalue = 1;
-            }
-            else if (a.Durability < b.Durability)
-            {
+
+            if(a == null | b == null) {
                 returnvalue = -1;
-            }
-            else
-            {
-                returnvalue = 0;
+            } else {
+                if (a.Durability > b.Durability) {
+                    returnvalue = 1;
+                } else if (a.Durability < b.Durability) {
+                    returnvalue = -1;
+                } else {
+                    returnvalue = 0;
+                }
             }
             return returnvalue;
         }
