@@ -6,24 +6,39 @@ namespace _01_14
 {
     public struct GameMap
     {
-        // Variável da score mais alta.
+        /// <summary>
+        /// Variável da score mais alta.
+        /// </summary>
         private float topScore;
         //
-        // Variável do número de jogos jogados.
+
+        /// <summary>
+        /// Variável do número de jogos jogados.
+        /// </summary>
         private int gamesPlayed;
         //
-        // Variável do número de jogos ganhos.
+
+        /// <summary>
+        /// Variável do número de jogos ganhos.
+        /// </summary>
         private int gamesWon;
         //
 
-        // Variável de leitura (excepto no construtor) do nome do mapa.
+        /// <summary>
+        /// Variável de leitura (excepto no construtor) do nome do mapa.
+        /// </summary>
         public string Name { get; }
         //
-        // Variável de leitura (excepto no construtor) de nome de ficheiro.
+
+        /// <summary>
+        /// Variável de leitura (excepto no construtor) de nome de ficheiro.
+        /// </summary>
         public string Filename { get; }
         //
 
-        // Variável de leitura da percentagem de sucesso.
+        /// <summary>
+        /// Variável de leitura da percentagem de sucesso.
+        /// </summary>
         public float SuccessRate {
             get {
                 if (gamesPlayed == 0)
@@ -34,7 +49,9 @@ namespace _01_14
         }
         //
 
-        // Variável de leitura do score mais alto
+        /// <summary>
+        /// Variável de leitura do score mais alto.
+        /// </summary>
         public float TopScore {
             get {
                 return topScore;
@@ -47,9 +64,11 @@ namespace _01_14
         }
         //
 
-        // Construtor que cria objecto e define os valores das variáveis.
-        /// <param name="name">Nome do mapa.</param>
-        /// /// <param name="filename">Nome do ficheiro.</param>
+        /// <summary>
+        /// Construtor que cria objecto e define os valores das variáveis.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="filename"></param>
         public GameMap(string name, string filename) {
             Name = name;
             Filename = filename;
@@ -59,8 +78,10 @@ namespace _01_14
         }
         //
 
-        // Método que verifica se ganhou o jogo
-        /// <param name="won">Bool que verifica se ganhou o jogo</param>
+        /// <summary>
+        /// Método que verifica se ganhou o jogo
+        /// </summary>
+        /// <param name="won"></param>
         public void GamePlayed(bool won) {
             gamesPlayed++;
             if (won) {
