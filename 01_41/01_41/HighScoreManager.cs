@@ -28,15 +28,22 @@ namespace _01_41
             //StreamReader streamreader = new StreamReader("highscores.txt");
             string content;
             string[] lines = File.ReadAllLines("highscores.txt");
-            string[] col = new string[10];
+            string[] col = new string[20];
             // Meter o conteúdo do ficheiro na coleção
             foreach(string line in lines) {
-                col = line.Split(',');
+                col = (line.Split(','));
             }
+            scorelist.Add(new Tuple<string, float>(col[0], float.Parse(col[1])));
             //streamreader.Close();
-            foreach(string item in col) {
+            foreach (string item in col) {
                 Console.WriteLine(item);
             }
+
+            // Só para eu ver o que se passa, delete later
+            foreach (var tuple in scorelist) {
+                Console.WriteLine("{0} - {1}", tuple.Item1, tuple.Item2.ToString());
+            }
+            //
         }
 
         public void AddScore(string name, float score) {
