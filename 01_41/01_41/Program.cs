@@ -6,18 +6,13 @@ namespace _01_41
     {
         private static HighScoreManager highscoremanager;
         static void Main(string[] args) {
-            int inputnumber = 0;
+            /*int inputnumber = 0;
             string userinput;
             bool stopinputnumber = false;
             string inputname;
-            float inputscore;
+            float inputscore;*/
             highscoremanager = new HighScoreManager("highscores.txt");
-            //highscoremanager.AddScore();
-            /*while(true) {
-                highscoremanager.AddScore(Console.ReadLine(), 
-                    float.Parse(Console.ReadLine()));
-            }*/
-            while(stopinputnumber == false) {
+            /*while(stopinputnumber == false) {
                 Console.WriteLine("Quantos scores quer colocar?");
                 userinput = Console.ReadLine();
                 if(int.TryParse(userinput, out inputnumber)) {
@@ -36,7 +31,7 @@ namespace _01_41
                 userinput = Console.ReadLine();
                 inputscore = float.Parse(userinput);
                 highscoremanager.AddScore(inputname, inputscore);
-            }
+            }*/
 
         }
     }

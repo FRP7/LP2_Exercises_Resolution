@@ -9,9 +9,6 @@ namespace _01_41
         public List<Tuple<string, float>> scorelist =
             new List<Tuple<string, float>>();
 
-        public string Name { get; set; }
-        public float Score { get; set; }
-
         public HighScoreManager(string name) {
             if (File.Exists(name)) {
                 Console.WriteLine("Ler ficheiro");
@@ -34,12 +31,12 @@ namespace _01_41
 
         public void AddScore(string name, float score) {
                 scorelist.Add(new Tuple<string, float>(name, score));
-                Name = name;
-                Score = score;
                 Console.WriteLine("Count: " + scorelist.Count);
-            /*while(scorelist.Count > 10) {
+            GetScores();
+            while(scorelist.Count > 10) {
                 // remover o que está no fundo da lista (tenho que ordenar primeiro)
-            }*/
+                scorelist.RemoveAt(scorelist.Count - 1);
+            }
         }
 
         private void Save() {
