@@ -25,18 +25,25 @@ namespace _01_41
         }
 
         private void Read() {
-            //StreamReader streamreader = new StreamReader("highscores.txt");
-            string content;
             string[] lines = File.ReadAllLines("highscores.txt");
-            string[] col = new string[20];
+            string[] col = new string[10];
             // Meter o conteúdo do ficheiro na coleção
             foreach(string line in lines) {
                 col = (line.Split(','));
+                AddScore(col[0], float.Parse(col[1]));
+                col[0] = default;
+                col[1] = default;
             }
-            scorelist.Add(new Tuple<string, float>(col[0], float.Parse(col[1])));
-            //streamreader.Close();
-            foreach (string item in col) {
-                Console.WriteLine(item);
+            //AddScore(col[0], float.Parse(col[1]));
+        }
+
+        public void AddScore(string name, float score) {
+                scorelist.Add(new Tuple<string, float>(name, score));
+                //Console.WriteLine("Count: " + scorelist.Count);
+            GetScores();
+            while(scorelist.Count > 10) {
+                // remover o que está no fundo da lista (tenho que ordenar primeiro)
+                scorelist.RemoveAt(scorelist.Count - 1);
             }
 
             // Só para eu ver o que se passa, delete later
@@ -44,16 +51,6 @@ namespace _01_41
                 Console.WriteLine("{0} - {1}", tuple.Item1, tuple.Item2.ToString());
             }
             //
-        }
-
-        public void AddScore(string name, float score) {
-                scorelist.Add(new Tuple<string, float>(name, score));
-                Console.WriteLine("Count: " + scorelist.Count);
-            GetScores();
-            while(scorelist.Count > 10) {
-                // remover o que está no fundo da lista (tenho que ordenar primeiro)
-                scorelist.RemoveAt(scorelist.Count - 1);
-            }
         }
 
         private void Save() {
