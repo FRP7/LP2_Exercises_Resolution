@@ -14,8 +14,12 @@ namespace _01_41
             if (File.Exists(name)) {
                 Console.WriteLine("Ler ficheiro");
                 Read();
-            }
-            else if(!File.Exists(name)) {
+                // Só para eu ver o que se passa, delete later
+                foreach (var tuple in scorelist) {
+                    Console.WriteLine("{0} - {1}", tuple.Item1, tuple.Item2.ToString());
+                }
+                //
+            } else if(!File.Exists(name)) {
                 Console.WriteLine("Ficheiro não existe.");
                 // Inicializar coleção sem elementos
             } 
@@ -31,6 +35,7 @@ namespace _01_41
             while((s = streamreader.ReadLine()) != null) {
                 lines = (s.Split(','));
                 AddScore(lines[0], float.Parse(lines[1]));
+                
             }
             streamreader.Close();
         }
@@ -43,12 +48,6 @@ namespace _01_41
                 // remover o que está no fundo da lista (tenho que ordenar primeiro)
                 scorelist.RemoveAt(scorelist.Count - 1);
             }
-
-            // Só para eu ver o que se passa, delete later
-            foreach (var tuple in scorelist) {
-                Console.WriteLine("{0} - {1}", tuple.Item1, tuple.Item2.ToString());
-            }
-            //
         }
 
         private void Save() {
