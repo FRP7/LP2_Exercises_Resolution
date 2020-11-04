@@ -10,7 +10,7 @@ namespace _01_41
             string userinput;
             bool stopinputnumber = false;
             string inputname;
-            int inputscore;
+            float inputscore;
             highscoremanager = new HighScoreManager("highscores.txt");
             //highscoremanager.AddScore();
             /*while(true) {
@@ -34,7 +34,7 @@ namespace _01_41
                 inputname = userinput;
                 Console.WriteLine("Escreva o score");
                 userinput = Console.ReadLine();
-                inputscore = Convert.ToInt32(userinput);
+                inputscore = float.Parse(userinput);
                 highscoremanager.AddScore(inputname, inputscore);
             }
 

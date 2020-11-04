@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
-using System.Linq;
 
 namespace _01_41
 {
     class HighScoreManager
     {
-        private List<Tuple<string, float>> scorelist =
+        public List<Tuple<string, float>> scorelist =
             new List<Tuple<string, float>>();
+
+        public string Name { get; set; }
+        public float Score { get; set; }
 
         public HighScoreManager(string name) {
             if (File.Exists(name)) {
@@ -33,6 +34,8 @@ namespace _01_41
 
         public void AddScore(string name, float score) {
                 scorelist.Add(new Tuple<string, float>(name, score));
+                Name = name;
+                Score = score;
                 Console.WriteLine("Count: " + scorelist.Count);
             /*while(scorelist.Count > 10) {
                 // remover o que está no fundo da lista (tenho que ordenar primeiro)
@@ -50,6 +53,8 @@ namespace _01_41
         }
 
         private void GetScores() {
+            CompareClass compareclass = new CompareClass();
+            scorelist.Sort(compareclass);
             // método iterável que retorna de forma ordenada (mais alto até mais baixo)
             // todos tuplos guardados na coleção
         }
