@@ -6,6 +6,7 @@ namespace _01_41
     {
         static void Main(string[] args) {
             Console.WriteLine("Hello World!");
+            HighScoreManager highscoremanager = new HighScoreManager("highscores.txt");
         }
     }
 }
