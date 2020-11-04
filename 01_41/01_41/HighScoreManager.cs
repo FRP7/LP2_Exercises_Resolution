@@ -53,7 +53,7 @@ namespace _01_41
         }
 
         private void GetScores() {
-            CompareClass compareclass = new CompareClass();
+            CompareScore compareclass = new CompareScore();
             scorelist.Sort(compareclass);
             // método iterável que retorna de forma ordenada (mais alto até mais baixo)
             // todos tuplos guardados na coleção
