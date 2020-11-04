@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace _01_14
 {
@@ -25,13 +23,13 @@ namespace _01_14
         //
 
         /// <summary>
-        /// Variável de leitura (excepto no construtor) do nome do mapa.
+        /// Variável auto implementada de leitura do nome do mapa.
         /// </summary>
         public string Name { get; }
         //
 
         /// <summary>
-        /// Variável de leitura (excepto no construtor) de nome de ficheiro.
+        /// Variável auto implementada de leitura do nome de ficheiro.
         /// </summary>
         public string Filename { get; }
         //
@@ -50,7 +48,7 @@ namespace _01_14
         //
 
         /// <summary>
-        /// Variável de leitura do score mais alto.
+        /// Variável do score mais alto.
         /// </summary>
         public float TopScore {
             get {
@@ -65,10 +63,11 @@ namespace _01_14
         //
 
         /// <summary>
-        /// Construtor que cria objecto e define os valores das variáveis.
+        /// Construtor que cria objecto e define os valores das respetivas
+        /// variáveis.
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="filename"></param>
+        /// <param name="name"> Nome do mapa. </param>
+        /// <param name="filename"> Nome do ficheiro </param>
         public GameMap(string name, string filename) {
             Name = name;
             Filename = filename;
@@ -79,9 +78,11 @@ namespace _01_14
         //
 
         /// <summary>
-        /// Método que verifica se ganhou o jogo
+        /// Método que verifica se ganhou o jogo e que incrementa a variável 
+        /// de jogos jogados. Caso ganhe, incrementa a variável do número de
+        /// jogos ganhos.
         /// </summary>
-        /// <param name="won"></param>
+        /// <param name="won"> Bool que verifica se ganhou o jogo. </param>
         public void GamePlayed(bool won) {
             gamesPlayed++;
             if (won) {

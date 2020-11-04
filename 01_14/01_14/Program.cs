@@ -4,13 +4,6 @@ namespace _01_14
 {
     class Program
     {
-        // Variável que acede ao GameMap;
-        private static GameMap _gamemap;
-        //
-        // Array de mapas
-        private static GameMap[] gamemaparray = new GameMap[5];
-        //
-
         /// <summary>
         /// 
         /// </summary>
@@ -18,17 +11,18 @@ namespace _01_14
         static void Main(string[] args) {
             Map(new GameMap[5] {
             new GameMap ("Earth", "earth.map"),
-            new GameMap ("Moon", "moon.map"),
-            new GameMap ("Mars", "mars.map"),
-            new GameMap ("Jupiter", "jupiter.map"),
-            new GameMap ("Uranus", "uranus.map") }
-                );
+                new GameMap ("Moon", "moon.map"),
+                new GameMap ("Mars", "mars.map"),
+                new GameMap ("Jupiter", "jupiter.map"),
+                new GameMap ("Uranus", "uranus.map") }
+            );
         }
 
         /// <summary>
         /// Construir mapas e mostrar no ecrã.
         /// </summary>
-        /// <param name="gamemap"></param>
+        /// <param name="gamemap"> Array onde vão ser guardados os mapas para
+        /// expor os dados</param>
         private static void Map(GameMap[] gamemap) {
 
             Console.WriteLine("Name              Filename      Sucess Rate    Top Score");
