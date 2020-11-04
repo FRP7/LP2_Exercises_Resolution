@@ -12,18 +12,22 @@ namespace _01_14
         //
 
         static void Main(string[] args) {
+                Map(new GameMap[5]);
+        }
+
+        private static void Map(GameMap[] gamemap) {
             // Construir mapas e adicionar ao array
             /// <param name="name">Nome do mapa.</param>
             /// /// <param name="filename">Nome do ficheiro.</param>
-            gamemaparray[0] = new GameMap
+            gamemap[0] = new GameMap
                 (name: "Earth", filename: "earth.map");
-            gamemaparray[1] = new GameMap
+            gamemap[1] = new GameMap
               (name: "Moon", filename: "moon.map");
-            gamemaparray[2] = new GameMap
+            gamemap[2] = new GameMap
               (name: "Mars", filename: "mars.map");
-            gamemaparray[3] = new GameMap
+            gamemap[3] = new GameMap
               (name: "Jupiter", filename: "Jupiter.map");
-            gamemaparray[4] = new GameMap
+            gamemap[4] = new GameMap
               (name: "Uranus", filename: "uranus.map");
             //
 
@@ -31,11 +35,11 @@ namespace _01_14
             Console.WriteLine("Name              Filename      Sucess Rate    Top Score");
             Console.WriteLine("--------------------------------------------------------");
 
-            for (int i = 0; i < gamemaparray.Length; i++) {
-                string showname = string.Format("{0,0}", gamemaparray[i].Name);
-                string showfilename = string.Format("{0,22}", gamemaparray[i].Filename);
-                string showsuccessrate = string.Format("{0,12:p1}", gamemaparray[i].SuccessRate);
-                string showtopscore = string.Format("{0,13:F3}", gamemaparray[i].TopScore);
+            for (int i = 0; i < gamemap.Length; i++) {
+                string showname = string.Format("{0,0}", gamemap[i].Name);
+                string showfilename = string.Format("{0,22}", gamemap[i].Filename);
+                string showsuccessrate = string.Format("{0,12:p1}", gamemap[i].SuccessRate);
+                string showtopscore = string.Format("{0,13:F3}", gamemap[i].TopScore);
                 Console.WriteLine(showname + showfilename + showsuccessrate + showtopscore);
             }
             //
