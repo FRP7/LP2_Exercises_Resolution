@@ -4,12 +4,10 @@ namespace _01_15
 {
     class Program
     {
-        // Variável para aceder à struct Duration.
-        private static Duration _duration = new Duration();
-
         static void Main(string[] args) {
-            // Chamar o método que gera os valores aleatórios.
-            _duration.InsertTime();
+            // Variável para aceder à struct Duration.
+            Duration _duration = new Duration(1000000000);
+            //
             // Mostrar no ecrã os valores.
             Console.WriteLine($"Segundos: {_duration.Seconds}");
             Console.WriteLine($"Minutos: {_duration.Minutes}");
@@ -17,6 +15,7 @@ namespace _01_15
             Console.WriteLine($"Dias: {_duration.Days}");
             Console.WriteLine($"Semanas: {_duration.Weeks}");
             Console.WriteLine($"Anos: {_duration.Years}");
+            //
         }
     }
 }
