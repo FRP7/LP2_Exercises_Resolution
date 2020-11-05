@@ -90,8 +90,8 @@ namespace _01_41
         /// </summary>
         private void GetScores() {
             // Ordenar o score
-            ScoreList.Sort((getname, getscore) =>
-            getscore.Item2.CompareTo(getname.Item2));
+            CompareScore comparescore = new CompareScore();
+            ScoreList.Sort(comparescore);
             //
 
             /* Caso a lista tenha mais de 10 elementos, remover os elementos 
