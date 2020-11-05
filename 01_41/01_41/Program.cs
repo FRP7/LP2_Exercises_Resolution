@@ -8,11 +8,9 @@ namespace _01_41
         static void Main(string[] args) {
             highscoremanager = new HighScoreManager("highscores.txt");
 
-            highscoremanager.AddScore("Francisco", 1);
-            highscoremanager.AddScore("Joao", 2);
-            highscoremanager.AddScore("Henrique", 3);
-            highscoremanager.AddScore("Pedro", 4);
-            highscoremanager.AddScore("Luis", 5);
+            highscoremanager.AddScore("Gervásio", 6);
+            highscoremanager.AddScore("Lucas", 7);
+            highscoremanager.AddScore("Gustavo", 8);
             highscoremanager.Save();
         }
     }

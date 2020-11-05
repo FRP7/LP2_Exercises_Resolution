@@ -52,11 +52,11 @@ namespace _01_41
 
         public void Save() {
             // guardar os scores no ficheiro
-            StreamWriter streamrider = new StreamWriter("highscores.txt");
-            for(int i = 0; i < scorelist.Count; i++) {
-                streamrider.WriteLine(scorelist[i].ToString(), scorelist[i].ToString());
+            StreamWriter streamwriter = new StreamWriter("highscores.txt");
+            foreach(Tuple<string, float> item in scorelist) {
+                streamwriter.WriteLine($"{item.Item1}, {item.Item2},");
             }
-            streamrider.Close();
+            streamwriter.Close();
         }
 
         public override string ToString() {
