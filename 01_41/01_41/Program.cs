@@ -6,11 +6,32 @@ namespace _01_41
     {
         private static HighScoreManager highscoremanager;
         static void Main(string[] args) {
+            int inputnumber = 0;
+            string userinput;
+            bool stopinputnumber = false;
+            string inputname;
+            int inputscore;
             highscoremanager = new HighScoreManager("highscores.txt");
+            while (stopinputnumber == false) {
+                Console.WriteLine("Quantos scores quer colocar?");
+                userinput = Console.ReadLine();
+                if (int.TryParse(userinput, out inputnumber)) {
+                    Console.WriteLine("Pode começar a colocar os scores.");
+                    stopinputnumber = true;
+                } else {
+                    Console.WriteLine("Input incorrecto, tente de novo.");
+                }
+            }
 
-            highscoremanager.AddScore("Gervásio", 6);
-            highscoremanager.AddScore("Lucas", 7);
-            highscoremanager.AddScore("Gustavo", 8);
+            for (int i = 0; i < inputnumber; i++) {
+                Console.WriteLine("Escreva o nome");
+                userinput = Console.ReadLine();
+                inputname = userinput;
+                Console.WriteLine("Escreva o score");
+                userinput = Console.ReadLine();
+                inputscore = Convert.ToInt32(userinput);
+                highscoremanager.AddScore(inputname, inputscore);
+            }
             highscoremanager.Save();
         }
     }

@@ -59,12 +59,6 @@ namespace _01_41
             streamwriter.Close();
         }
 
-        public override string ToString() {
-            // devolver uma string contendo uma tabela formatada com nomes 
-            //e scores do mais alto ao mais baixo
-            return base.ToString();
-        }
-
         private void GetScores() {
             CompareScore compareclass = new CompareScore();
             scorelist.Sort(compareclass);
