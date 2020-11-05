@@ -15,7 +15,7 @@ namespace _01_41
                 Console.WriteLine("Ler ficheiro");
                 Read();
                 // Só para eu ver o que se passa, delete later
-                foreach (var tuple in scorelist) {
+                foreach (Tuple<string, float> tuple in scorelist) {
                     Console.WriteLine("{0} - {1}", tuple.Item1, tuple.Item2.ToString());
                 }
                 //
@@ -50,8 +50,13 @@ namespace _01_41
             }
         }
 
-        private void Save() {
+        public void Save() {
             // guardar os scores no ficheiro
+            StreamWriter streamrider = new StreamWriter("highscores.txt");
+            for(int i = 0; i < scorelist.Count; i++) {
+                streamrider.WriteLine(scorelist[i].ToString(), scorelist[i].ToString());
+            }
+            streamrider.Close();
         }
 
         public override string ToString() {
