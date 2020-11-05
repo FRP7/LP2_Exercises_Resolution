@@ -1,3 +1,0 @@
-xico, 10,
-lucas, 5,
-pedro, 11,

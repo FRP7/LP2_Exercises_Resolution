@@ -7,63 +7,101 @@ namespace _01_41
 {
     class HighScoreManager
     {
-        public List<Tuple<string, float>> scorelist =
+        /// <summary>
+        /// Lista do score (nomes e pontuações).
+        /// </summary>
+        private List<Tuple<string, float>> ScoreList =
             new List<Tuple<string, float>>();
+        //
 
+        /// <summary>
+        /// Construtor do ficheiro.
+        /// </summary>
+        /// <param name="name"> Nome do ficheiro. </param>
         public HighScoreManager(string name) {
-            if (File.Exists(name)) {
+            FileCheck(name);
+        }
+        //
+
+        /// <summary>
+        /// Verificar a existência do ficheiro.
+        /// </summary>
+        /// <param name="file"> Nome do ficheiro. </param>
+        private void FileCheck(string file) {
+            if (File.Exists(file)) {
                 Console.WriteLine("Ler ficheiro");
-                Read();
-                // Só para eu ver o que se passa, delete later
-                foreach (Tuple<string, float> tuple in scorelist) {
-                    Console.WriteLine("{0} - {1}", tuple.Item1, tuple.Item2.ToString());
-                }
-                //
-            } else if(!File.Exists(name)) {
-                Console.WriteLine("Ficheiro não existe.");
-                // Inicializar coleção sem elementos
+                Read(file);
             } 
-            else if (Path.GetExtension(name) != ".txt") {
+            else if (!File.Exists(file)) {
+                Console.WriteLine("Ficheiro não existe.");
+            } 
+            else if (Path.GetExtension(file) != ".txt") {
                 throw new InvalidOperationException();
             }
         }
+        //
 
-        private void Read() {
+        /// <summary>
+        /// Método para ler o ficheiro e separar os dados.
+        /// </summary>
+        /// <param name="filename"> Nome do ficheiro. </param>
+        private void Read(string filename) {
             string s;
             string[] lines;
-            StreamReader streamreader = new StreamReader("highscores.txt");
+            StreamReader streamreader = new StreamReader(filename);
             while((s = streamreader.ReadLine()) != null) {
+                // Separar os dados por vírgula.
                 lines = (s.Split(','));
+                //
+                // Colocar na lista os dados obtidos.
                 AddScore(lines[0], float.Parse(lines[1]));
+                //
                 
             }
             streamreader.Close();
         }
+        //
 
+        /// <summary>
+        /// Método para adicionar os dados à lista.
+        /// </summary>
+        /// <param name="name"> Nome do jogador. </param>
+        /// <param name="score"> Pontuação do jogador. </param>
         public void AddScore(string name, float score) {
-                scorelist.Add(new Tuple<string, float>(name, score));
-                //Console.WriteLine("Count: " + scorelist.Count);
+                ScoreList.Add(new Tuple<string, float>(name, score));
+            // Método para ordenar a lista.
             GetScores();
-            while(scorelist.Count > 10) {
-                // remover o que está no fundo da lista (tenho que ordenar primeiro)
-                scorelist.RemoveAt(scorelist.Count - 1);
+            //
+            /* Caso a lista tenha mais de 10 elementos, remover os elementos 
+             * com pontuação mais baixa até ficar nos 10 elementos.
+             * Como a lista está ordenada por ordem decrescente,
+             * removo o elemento que está no fundo (que é o mais baixo).*/
+            while(ScoreList.Count > 10) {
+                ScoreList.RemoveAt(ScoreList.Count - 1);
             }
+            //
         }
+        //
 
+        /// <summary>
+        /// Método para guardar os elementos da lista no ficheiro.
+        /// </summary>
         public void Save() {
-            // guardar os scores no ficheiro
             StreamWriter streamwriter = new StreamWriter("highscores.txt");
-            foreach(Tuple<string, float> item in scorelist) {
+            foreach(Tuple<string, float> item in ScoreList) {
                 streamwriter.WriteLine($"{item.Item1}, {item.Item2},");
             }
             streamwriter.Close();
         }
+        //
 
+        /// <summary>
+        /// Método para ordenar por ordem decrescente a lista.
+        /// </summary>
         private void GetScores() {
             CompareScore compareclass = new CompareScore();
-            scorelist.Sort(compareclass);
-            // método iterável que retorna de forma ordenada (mais alto até mais baixo)
-            // todos tuplos guardados na coleção
+            ScoreList.Sort(compareclass);
         }
+        //
     }
 }
