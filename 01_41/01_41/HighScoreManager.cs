@@ -14,13 +14,6 @@ namespace _01_41
             new List<Tuple<string, float>>();
         //
 
-        // Nome do jogador
-        private string getname { get; set; }
-        //
-        // Score do jogador
-        private float getscore { get; set; }
-        //
-
         /// <summary>
         /// Construtor do ficheiro.
         /// </summary>
@@ -75,8 +68,6 @@ namespace _01_41
         /// <param name="name"> Nome do jogador. </param>
         /// <param name="score"> Pontuação do jogador. </param>
         public void AddScore(string name, float score) {
-            getname = name;
-            getscore = score;
             ScoreList.Add(new Tuple<string, float>(name, score));
         }
         //
