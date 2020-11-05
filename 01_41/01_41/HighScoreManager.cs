@@ -10,8 +10,7 @@ namespace _01_41
         /// <summary>
         /// Lista do score (nomes e pontuações).
         /// </summary>
-        private List<Tuple<string, float>> ScoreList =
-            new List<Tuple<string, float>>();
+        private List<Tuple<string, float>> ScoreList;
         //
 
         /// <summary>
@@ -19,6 +18,8 @@ namespace _01_41
         /// </summary>
         /// <param name="name"> Nome do ficheiro. </param>
         public HighScoreManager(string name) {
+            ScoreList =
+            new List<Tuple<string, float>>();
             FileCheck(name);
         }
         //
