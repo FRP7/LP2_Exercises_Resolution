@@ -4,7 +4,7 @@ namespace _01_41
 {
     class Program
     {
-        private static HighScoreManager highscoremanager, highscoremanager2;
+        private static HighScoreManager highscoremanager;
         static void Main(string[] args) {
             highscoremanager = new HighScoreManager("highscores.txt");
 
