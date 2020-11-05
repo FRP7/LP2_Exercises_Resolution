@@ -57,7 +57,7 @@ namespace _01_41
             //
 
             // Método para guardar os elementos da lista no ficheiro.
-            highscoremanager.Save();
+            highscoremanager.Save("highscores.txt");
             //
         }
     }

@@ -75,8 +75,9 @@ namespace _01_41
         /// <summary>
         /// Método para guardar os elementos da lista no ficheiro.
         /// </summary>
-        public void Save() {
-            StreamWriter streamwriter = new StreamWriter("highscores.txt");
+        /// <param name="filename"> Nome do ficheiro. </param>
+        public void Save(string filename) {
+            StreamWriter streamwriter = new StreamWriter(filename);
             GetScores();
             foreach(Tuple<string, float> item in ScoreList) {
                 streamwriter.WriteLine($"{item.Item1}, {item.Item2},");
