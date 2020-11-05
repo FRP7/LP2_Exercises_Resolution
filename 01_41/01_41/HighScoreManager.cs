@@ -14,6 +14,13 @@ namespace _01_41
             new List<Tuple<string, float>>();
         //
 
+        // Nome do jogador
+        private string getname { get; set; }
+        //
+        // Score do jogador
+        private float getscore { get; set; }
+        //
+
         /// <summary>
         /// Construtor do ficheiro.
         /// </summary>
@@ -68,18 +75,9 @@ namespace _01_41
         /// <param name="name"> Nome do jogador. </param>
         /// <param name="score"> Pontuação do jogador. </param>
         public void AddScore(string name, float score) {
-                ScoreList.Add(new Tuple<string, float>(name, score));
-            // Método para ordenar a lista.
-            GetScores();
-            //
-            /* Caso a lista tenha mais de 10 elementos, remover os elementos 
-             * com pontuação mais baixa até ficar nos 10 elementos.
-             * Como a lista está ordenada por ordem decrescente,
-             * removo o elemento que está no fundo (que é o mais baixo).*/
-            while(ScoreList.Count > 10) {
-                ScoreList.RemoveAt(ScoreList.Count - 1);
-            }
-            //
+            getname = name;
+            getscore = score;
+            ScoreList.Add(new Tuple<string, float>(name, score));
         }
         //
 
@@ -88,6 +86,7 @@ namespace _01_41
         /// </summary>
         public void Save() {
             StreamWriter streamwriter = new StreamWriter("highscores.txt");
+            GetScores();
             foreach(Tuple<string, float> item in ScoreList) {
                 streamwriter.WriteLine($"{item.Item1}, {item.Item2},");
             }
@@ -99,8 +98,19 @@ namespace _01_41
         /// Método para ordenar por ordem decrescente a lista.
         /// </summary>
         private void GetScores() {
-            CompareScore compareclass = new CompareScore();
-            ScoreList.Sort(compareclass);
+            // Ordenar o score
+            ScoreList.Sort((getname, getscore) =>
+            getscore.Item2.CompareTo(getname.Item2));
+            //
+
+            /* Caso a lista tenha mais de 10 elementos, remover os elementos 
+            * com pontuação mais baixa até ficar nos 10 elementos.
+            * Como a lista está ordenada por ordem decrescente,
+            * removo o elemento que está no fundo (que é o mais baixo).*/
+            while (ScoreList.Count > 10) {
+                ScoreList.RemoveAt(ScoreList.Count - 1);
+            }
+            //
         }
         //
     }
