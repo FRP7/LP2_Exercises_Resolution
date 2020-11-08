@@ -28,6 +28,7 @@ namespace _02_02
 
                 return new Vector2(avgX, avgY);
             }
+            set {; }
         }
         protected virtual float Health { 
             get {
@@ -47,8 +48,8 @@ namespace _02_02
         }
        
 
-        protected virtual void Move() {
-
+        protected virtual Vector2 Move(float vx, float vy) {
+            return new Vector2(vx - Position.X, vy - Position.Y);
         }
     }
 }

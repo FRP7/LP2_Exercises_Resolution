@@ -43,8 +43,8 @@ namespace _02_02
             Console.WriteLine($"Health: {Health}");
         }
 
-        protected override void Move() {
-
+        protected override Vector2 Move(float vx, float vy) {
+            return new Vector2(vx - Position.X, vy - Position.Y);
         }
     }
 }
