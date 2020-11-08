@@ -14,11 +14,7 @@ namespace _02_02
             Position = position;
             Health = health;
             // só para teste, delete later:
-            Console.WriteLine($"Name: {name}");
-            Console.WriteLine($"Position X: {position.X}");
-            Console.WriteLine($"Position Y: {position.Y}");
-            Console.WriteLine($"Health: {health}");
-            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine(ToString());
         }
 
         public void Move(Vector2 newPosition) {
