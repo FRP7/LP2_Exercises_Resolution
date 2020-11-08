@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace _02_02
 {
@@ -12,6 +13,12 @@ namespace _02_02
             UnitName = name;
             Position = position;
             Health = health;
+            // só para teste, delete later:
+            Console.WriteLine($"Name: {name}");
+            Console.WriteLine($"Position X: {position.X}");
+            Console.WriteLine($"Position Y: {position.Y}");
+            Console.WriteLine($"Health: {health}");
+            Console.WriteLine(Environment.NewLine);
         }
 
         public void Move(Vector2 newPosition) {
