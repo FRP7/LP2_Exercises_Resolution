@@ -10,7 +10,7 @@ namespace _02_02
         protected virtual string Name { get; set; }
         protected virtual float Position { get; set; }
         protected virtual float Health { get; set; }
-        protected Stack<object> squadstack = new Stack<object>();
+        public Stack<object> squadstack = new Stack<object>();
 
         protected virtual void Move() {
 
