@@ -27,6 +27,8 @@ namespace _02_02
             foreach (object item in subsquad.subsquadstack) {
                 Console.WriteLine(item.ToString());
             }
+            Console.WriteLine("Stats da squad: ");
+            squad.Teste();
         }
     }
 }
