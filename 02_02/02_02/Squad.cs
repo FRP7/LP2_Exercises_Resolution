@@ -45,11 +45,20 @@ namespace _02_02
             Console.WriteLine($"Average position X: {Position.X}");
             Console.WriteLine($"Average position Y: {Position.Y}");
             Console.WriteLine($"Average health: {Health}");
+            Move(new Vector2(2, 2));
+            Console.WriteLine($"New X: {Position.X}");
+            Console.WriteLine($"New Y Y: {Position.Y}");
         }
        
 
-        protected virtual Vector2 Move(float vx, float vy) {
-            return new Vector2(vx - Position.X, vy - Position.Y);
+        protected virtual void Move(Vector2 newposition) {
+            Vector2 finalmovement = new Vector2(newposition.X - Position.X,
+                newposition.Y - Position.Y);
+
+            foreach (Unit item in squadstack) {
+                item.Move(new Vector2(Position.X + finalmovement.X, 
+                    Position.Y + finalmovement.Y));
+            }
         }
     }
 }

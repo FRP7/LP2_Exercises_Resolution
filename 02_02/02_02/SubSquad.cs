@@ -43,8 +43,14 @@ namespace _02_02
             Console.WriteLine($"Health: {Health}");
         }
 
-        protected override Vector2 Move(float vx, float vy) {
-            return new Vector2(vx - Position.X, vy - Position.Y);
+        protected override void Move(Vector2 newposition) {
+            Vector2 finalmovement = new Vector2(newposition.X - Position.X,
+                newposition.Y - Position.Y);
+
+            foreach (Unit item in subsquadstack) {
+                item.Move(new Vector2(Position.X + finalmovement.X,
+                    Position.Y + finalmovement.Y));
+            }
         }
     }
 }
