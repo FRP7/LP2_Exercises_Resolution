@@ -11,13 +11,22 @@ namespace _02_02
         protected virtual string Name {
             get => $"Group of {squadstack.Count} units";
         }
-        protected virtual float Position {
+        protected virtual Vector2 Position {
             get {
-                float sum = 0;
+                float sumX = 0;
+                float sumY = 0;
+                float avgX;
+                float avgY;
                 foreach (Unit item in squadstack) {
-                    sum += item.Position.X + item.Position.Y;
+                    sumX += item.Position.X;
                 }
-                return sum / squadstack.Count;
+                foreach (Unit item in squadstack) {
+                    sumY += item.Position.Y;
+                }
+                avgX = sumX / squadstack.Count;
+                avgY = sumY / squadstack.Count;
+
+                return new Vector2(avgX, avgY);
             }
         }
         protected virtual float Health { 
@@ -31,7 +40,9 @@ namespace _02_02
         }
 
         public void Teste() {
-            Console.WriteLine($"Average position: {Position}");
+            Console.WriteLine($"Name: {Name}");
+            Console.WriteLine($"Average position X: {Position.X}");
+            Console.WriteLine($"Average position Y: {Position.Y}");
             Console.WriteLine($"Average health: {Health}");
         }
        
