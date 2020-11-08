@@ -5,12 +5,22 @@ using System.Collections.Generic;
 
 namespace _02_02
 {
+    /// <summary>
+    /// Classe da Squad.
+    /// </summary>
     public class Squad
     {  
+        // Stack das units da squad.
         public Stack<object> squadstack = new Stack<object>();
+        //
+
+        // Variável string de leitura de exposição do número de units na squad.
         protected virtual string Name {
             get => $"Group of {squadstack.Count} units";
         }
+        //
+
+        // Variável Vector2 da posição da squad.
         protected virtual Vector2 Position {
             get {
                 float sumX = 0;
@@ -30,6 +40,9 @@ namespace _02_02
             }
             set {; }
         }
+        //
+
+        // Variável float de leitura da vida da squad.
         protected virtual float Health { 
             get {
                 float sum = 0;
@@ -39,7 +52,12 @@ namespace _02_02
                 return sum / squadstack.Count;
             }
         }
+        //
        
+        /// <summary>
+        /// Método de adicionar movimento à squad.
+        /// </summary>
+        /// <param name="newposition"> Novo movimento. </param>
         public virtual void Move(Vector2 newposition) {
             Vector2 finalmovement = new Vector2(newposition.X - Position.X,
                 newposition.Y - Position.Y);
@@ -49,5 +67,7 @@ namespace _02_02
                     Position.Y + finalmovement.Y));
             }
         }
+        //
     }
+    //
 }
