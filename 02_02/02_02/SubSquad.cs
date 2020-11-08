@@ -36,17 +36,7 @@ namespace _02_02
             }
         }
 
-        public void TesteSubsquad() {
-            Console.WriteLine($"Name: {Name}");
-            Console.WriteLine($"Position X: {Position.X}");
-            Console.WriteLine($"Position Y: {Position.Y}");
-            Console.WriteLine($"Health: {Health}");
-            Move(new Vector2(2, 2));
-            Console.WriteLine($"New X: {Position.X}");
-            Console.WriteLine($"New Y Y: {Position.Y}");
-        }
-
-        protected override void Move(Vector2 newposition) {
+        public override void Move(Vector2 newposition) {
             Vector2 finalmovement = new Vector2(newposition.X - Position.X,
                 newposition.Y - Position.Y);
 

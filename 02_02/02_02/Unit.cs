@@ -13,8 +13,6 @@ namespace _02_02
             UnitName = name;
             Position = position;
             Health = health;
-            // só para teste, delete later:
-            Console.WriteLine(ToString());
         }
 
         public void Move(Vector2 newPosition) {

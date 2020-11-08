@@ -39,19 +39,8 @@ namespace _02_02
                 return sum / squadstack.Count;
             }
         }
-
-        public void TesteSquad() {
-            Console.WriteLine($"Name: {Name}");
-            Console.WriteLine($"Average position X: {Position.X}");
-            Console.WriteLine($"Average position Y: {Position.Y}");
-            Console.WriteLine($"Average health: {Health}");
-            Move(new Vector2(2, 2));
-            Console.WriteLine($"New X: {Position.X}");
-            Console.WriteLine($"New Y Y: {Position.Y}");
-        }
        
-
-        protected virtual void Move(Vector2 newposition) {
+        public virtual void Move(Vector2 newposition) {
             Vector2 finalmovement = new Vector2(newposition.X - Position.X,
                 newposition.Y - Position.Y);
 
