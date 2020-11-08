@@ -1,0 +1,15 @@
+﻿using System;
+
+namespace _02_02
+{
+    public struct Vector2
+    {
+        public float X { get; }
+        public float Y { get; }
+
+        public Vector2(float x, float y) {
+            X = x;
+            Y = y;
+        }
+    }
+}
