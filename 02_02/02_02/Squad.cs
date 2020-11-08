@@ -39,7 +39,7 @@ namespace _02_02
             }
         }
 
-        public void Teste() {
+        public void TesteSquad() {
             Console.WriteLine($"Name: {Name}");
             Console.WriteLine($"Average position X: {Position.X}");
             Console.WriteLine($"Average position Y: {Position.Y}");

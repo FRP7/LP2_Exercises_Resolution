@@ -28,7 +28,9 @@ namespace _02_02
                 Console.WriteLine(item.ToString());
             }
             Console.WriteLine("Stats da squad: ");
-            squad.Teste();
+            squad.TesteSquad();
+            Console.WriteLine("Stats da subsquad: ");
+            subsquad.TesteSubsquad();
         }
     }
 }
