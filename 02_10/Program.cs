@@ -5,6 +5,7 @@ namespace _02_10
     class Program
     {
         static void Main(string[] args) {
+            // Experimentar os valores.
             try {
                 TilePosition tileposition1 = new TilePosition(3, 3);
             }
@@ -32,6 +33,7 @@ namespace _02_10
             catch (InvalidTilePositionException msg) {
                 Console.WriteLine(msg.Message);
             }
+            //
         }
     }
 }
