@@ -70,6 +70,9 @@ namespace _01_02
             // Verificar se os elementos estão preenchidos
             bool isvalue = false;
             //
+            // Verificar se foi colocado um elemento.
+            bool isAdded = false;
+            //
 
             // Definir o número de linhas
             while (ismatrixlines == false) {
@@ -115,7 +118,7 @@ namespace _01_02
             while(isvalue == false) {
                 for (int j = 0; j < matrixlines; j++) {
                     for (int i = 0; i < matrixcolumns; i++) {
-                        while (value == 0f) {
+                        while (isAdded == false) {
                             Console.WriteLine($"Insere um número na linha" +
                                 $" {j + 1} na coluna {i + 1}: ");
                             if (j == 0 && i == 0) {
@@ -134,13 +137,14 @@ namespace _01_02
                                 // Mostrar matriz
                                 PrintMatrix();
                                 //
+                                isAdded = true;
                             } else {
                                 Console.WriteLine
                                     ("Valor inválido, tente de novo");
                             }
                             //
                         }
-                        value = default;
+                        isAdded = false;
                     }
                     isvalue = true;
                 }
@@ -163,9 +167,11 @@ namespace _01_02
             // Valor
             float value = 0f;
             //
-
+            // Verificar se foi inserido algum valor
+            bool isAdded = false;
+            //
                 for (int i = 0; i < matrixcolumns; i++) {
-                    while (value == 0f) {
+                    while (isAdded == false) {
                         Console.WriteLine($"Insere um número na linha " +
                             $"{i + 1} na coluna 1: ");
                         if (i == 0) {
@@ -184,12 +190,13 @@ namespace _01_02
                             // Mostrar vector
                             PrintVector();
                             //
+                            isAdded = true;
                         } else {
                             Console.WriteLine("Valor inválido, tente de novo");
                         }
                         //
                     }
-                    value = default;
+                    isAdded = false;
                 }
             //
         }
