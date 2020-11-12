@@ -7,7 +7,7 @@ namespace Checker
     {
         public Checker(int al, int ac, int[,] val, string ui) {
             // Chamar o método Check()
-            Check(al, ac, val, ui);
+            Check(val, Convert.ToInt32(ui));
             //
         }
         private static void Main(string[] args) {
@@ -117,8 +117,7 @@ namespace Checker
             PrintArray(values);
             //
 
-            if (_check.Check(arraylines, arraycolumns,
-                values, userinput) == true) {
+            if (_check.Check(values, Convert.ToInt32(userinput)) == true) {
                 Console.WriteLine("Existe linha");
             } else {
                 Console.WriteLine("Não existe linha");
@@ -129,16 +128,7 @@ namespace Checker
          * para procurar.
          * Retoma true se encontrar.
          */
-        private bool Check(int al, int ac, int[,] val , string ui) {
-            // Definir o tamanho da array onde vai ser analisada
-            int[,] x = new int[al, ac];
-            //
-            // Definir os valores da array x
-            x = val;
-            //
-            // Converter para int o valor que o user quer que seja procurado
-            float y = float.Parse(ui);
-            //
+        private bool Check(int[,] x , int ui) {
             // Contar a quantidade de valores seguidos na array x
             int sum = 0;
             //
@@ -154,7 +144,7 @@ namespace Checker
                 for (int j = 0; j < x.GetLength(1); j++) {
                     /* Verificar se existe um valor igual ao que
                      * o user escolheu */
-                    if (x[n, j] == y) {
+                    if (x[n, j] == ui) {
                         // Soma
                         sum++;
                         //
@@ -177,7 +167,7 @@ namespace Checker
                 for (int n = 0; n < x.GetLength(0); n++) {
                     /* Verificar se existe um valor igual ao que o 
                      * user escolheu */
-                    if (x[n, j] == y) {
+                    if (x[n, j] == ui) {
                         // Soma
                         sum++;
                         //
@@ -199,7 +189,7 @@ namespace Checker
                     for (int j = 0; j < x.GetLength(1); j++) {
                         /* Verificar se existe um valor igual ao que o
                          * user escolheu */
-                        if (x[z, j] == y) {
+                        if (x[z, j] == ui) {
                             // Soma
                             sum++;
                             //
@@ -224,7 +214,7 @@ namespace Checker
                     for (int j = x.GetLength(1) - 1; j >= 0; j--) {
                         /* Verificar se existe um valor igual ao que o user 
                         escolheu*/
-                        if (x[z, j] == y) {
+                        if (x[z, j] == ui) {
                             sum++;
                         }
                         //
