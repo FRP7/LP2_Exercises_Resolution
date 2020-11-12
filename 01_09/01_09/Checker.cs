@@ -1,24 +1,13 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
+
 namespace Checker
 {
     class Checker
     {
-        // Input do user
-        private static string userinput;
-        //
-        // Número de linhas da array
-        private static int arraylines;
-        //
-        // Número de colunas da array
-        private static int arraycolumns;
-        //
-        // Array final
-        private static float[,] values;
-        //
-
-        public Checker() {
+        public Checker(int al, int ac, float[,] val, string ui) {
             // Verificar se o método Check() retoma true
-            if (Check() == true) {
+            if (Check(al, ac, val, ui) == true) {
                 Console.WriteLine("Existe linha");
             } else {
                 Console.WriteLine("Não existe linha");
@@ -26,6 +15,18 @@ namespace Checker
             //
         }
         private static void Main(string[] args) {
+             // Input do user
+            string userinput;
+            //
+            // Número de linhas da array
+            int arraylines = 0;
+            //
+            // Número de colunas da array
+            int arraycolumns = 0;
+            //
+            // Array final
+            float[,] values;
+            //
             // Nova instância de Checker
             Checker _check;
             //
@@ -93,7 +94,7 @@ namespace Checker
                              * e colocar na array */
                             if (float.TryParse(userinput, out value)) {
                                 values[x, y] = value;
-                                PrintArray();
+                                PrintArray(values);
                                 //
                             }
                             else {
@@ -113,11 +114,11 @@ namespace Checker
             //
 
             // Verificar se o método Check() retoma true
-            _check = new Checker();
+            _check = new Checker(arraylines, arraycolumns, values, userinput);
             //
 
             // Mostrar a array
-            PrintArray();
+            PrintArray(values);
             //
         }
         /* Método para verificar se a array contêm uma linha com
@@ -125,15 +126,15 @@ namespace Checker
          * para procurar.
          * Retoma true se encontrar.
          */
-        private bool Check() {
+        private bool Check(int al, int ac, float[,] val , string ui) {
             // Definir o tamanho da array onde vai ser analisada
-            float[,] x = new float[arraylines, arraycolumns];
+            float[,] x = new float[al, ac];
             //
             // Definir os valores da array x
-            x = values;
+            x = val;
             //
             // Converter para int o valor que o user quer que seja procurado
-            float y = float.Parse(userinput);
+            float y = float.Parse(ui);
             //
             // Contar a quantidade de valores seguidos na array x
             int sum = 0;
@@ -242,12 +243,12 @@ namespace Checker
             //
         }
         // Método para mostrar a array
-        private static void PrintArray() {
+        private static void PrintArray(float[,] val) {
             // Tamanho da linha
-            int rowLength = values.GetLength(0);
+            int rowLength = val.GetLength(0);
             //
             // Tamanho da coluna
-            int colLength = values.GetLength(1);
+            int colLength = val.GetLength(1);
             //
             // Mostrar a array:
             string arrayString = "";
@@ -255,7 +256,7 @@ namespace Checker
             for (int i = 0; i < rowLength; i++) {
                 for (int j = 0; j < colLength; j++) {
                     // Colocar os valores da array
-                    arrayString += string.Format("{0} ", values[i, j]);
+                    arrayString += string.Format("{0} ", val[i, j]);
                     //
                 }
                 // Colocar nova linha
