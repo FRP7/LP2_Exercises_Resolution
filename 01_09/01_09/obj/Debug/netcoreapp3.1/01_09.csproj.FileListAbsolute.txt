@@ -1,0 +1,13 @@
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\bin\Debug\netcoreapp3.1\01_09.exe
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\bin\Debug\netcoreapp3.1\01_09.deps.json
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\bin\Debug\netcoreapp3.1\01_09.runtimeconfig.json
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\bin\Debug\netcoreapp3.1\01_09.runtimeconfig.dev.json
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\bin\Debug\netcoreapp3.1\01_09.dll
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\bin\Debug\netcoreapp3.1\01_09.pdb
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\obj\Debug\netcoreapp3.1\01_09.csprojAssemblyReference.cache
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\obj\Debug\netcoreapp3.1\01_09.AssemblyInfoInputs.cache
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\obj\Debug\netcoreapp3.1\01_09.AssemblyInfo.cs
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\obj\Debug\netcoreapp3.1\01_09.csproj.CoreCompileInputs.cache
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\obj\Debug\netcoreapp3.1\01_09.dll
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\obj\Debug\netcoreapp3.1\01_09.pdb
+C:\Users\Francisco\Documents\GitHub\LP2_Exercises_Resolution\01_09\01_09\obj\Debug\netcoreapp3.1\01_09.genruntimeconfig.cache
