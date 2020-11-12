@@ -6,12 +6,8 @@ namespace Checker
     class Checker
     {
         public Checker(int al, int ac, float[,] val, string ui) {
-            // Verificar se o método Check() retoma true
-            if (Check(al, ac, val, ui) == true) {
-                Console.WriteLine("Existe linha");
-            } else {
-                Console.WriteLine("Não existe linha");
-            }
+            // Chamar o método Check()
+            Check(al, ac, val, ui);
             //
         }
         private static void Main(string[] args) {
@@ -236,8 +232,10 @@ namespace Checker
             //
             // Verificar se foi encontrado quatro valores seguidos 
             if (isfour == true) {
+                Console.WriteLine("Existe linha");
                 return true;
             } else {
+                Console.WriteLine("Não existe linha");
                 return false;
             }
             //
