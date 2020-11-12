@@ -212,12 +212,12 @@ namespace _01_02
             // Multiplicar os valores da matriz com o vetor
                 for (int n = 0; n < matrix.GetLength(0); n++) {
                     for (int i = 0; i < matrix.GetLength(1); i++) {
-                        for (int j = 0; i < vector.GetLength(0); i++) {
+                        while (i < vector.GetLength(0)) {
                             matrix[n, i] = matrix[n, i]
                                 * vector[vectorindex, 0];
                             vectorindex++;
+                            i++;
                         }
-
                     }
                     vectorindex = default;
                 //
