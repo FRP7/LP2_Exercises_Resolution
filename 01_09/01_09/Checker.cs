@@ -116,6 +116,13 @@ namespace Checker
             // Mostrar a array
             PrintArray(values);
             //
+
+            if (_check.Check(arraylines, arraycolumns,
+                values, userinput) == true) {
+                Console.WriteLine("Existe linha");
+            } else {
+                Console.WriteLine("Não existe linha");
+            }
         }
         /* Método para verificar se a array contêm uma linha com
          * quatro ou mais valores seguidos iguais aos que o user pede
@@ -232,10 +239,10 @@ namespace Checker
             //
             // Verificar se foi encontrado quatro valores seguidos 
             if (isfour == true) {
-                Console.WriteLine("Existe linha");
                 return true;
+
             } else {
-                Console.WriteLine("Não existe linha");
+
                 return false;
             }
             //
