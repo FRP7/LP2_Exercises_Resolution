@@ -5,7 +5,7 @@ namespace Checker
 {
     class Checker
     {
-        public Checker(int al, int ac, float[,] val, string ui) {
+        public Checker(int al, int ac, int[,] val, string ui) {
             // Chamar o método Check()
             Check(al, ac, val, ui);
             //
@@ -21,7 +21,7 @@ namespace Checker
             int arraycolumns = 0;
             //
             // Array final
-            float[,] values;
+            int[,] values;
             //
             // Nova instância de Checker
             Checker _check;
@@ -36,7 +36,7 @@ namespace Checker
             bool isvalue = false;
             //
             // O valor do input do user
-            float value = 0f;
+            int value = 0;
             //
 
             // Definir o número de linhas
@@ -72,7 +72,7 @@ namespace Checker
             //
 
             // Definir o tamanho da array values
-            values = new float[arraylines, arraycolumns];
+            values = new int[arraylines, arraycolumns];
             //
 
             Console.WriteLine($"Tem {arraylines * arraycolumns} slots");
@@ -88,7 +88,7 @@ namespace Checker
                             //
                             /* Tentar converter o input para float
                              * e colocar na array */
-                            if (float.TryParse(userinput, out value)) {
+                            if (Int32.TryParse(userinput, out value)) {
                                 values[x, y] = value;
                                 PrintArray(values);
                                 //
@@ -129,9 +129,9 @@ namespace Checker
          * para procurar.
          * Retoma true se encontrar.
          */
-        private bool Check(int al, int ac, float[,] val , string ui) {
+        private bool Check(int al, int ac, int[,] val , string ui) {
             // Definir o tamanho da array onde vai ser analisada
-            float[,] x = new float[al, ac];
+            int[,] x = new int[al, ac];
             //
             // Definir os valores da array x
             x = val;
@@ -248,7 +248,7 @@ namespace Checker
             //
         }
         // Método para mostrar a array
-        private static void PrintArray(float[,] val) {
+        private static void PrintArray(int[,] val) {
             // Tamanho da linha
             int rowLength = val.GetLength(0);
             //
