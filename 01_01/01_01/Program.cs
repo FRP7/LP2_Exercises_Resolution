@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 namespace exercicio1
 {
     class Program
@@ -8,14 +7,13 @@ namespace exercicio1
         // Valores do args convertidos para int
         private static float[] arraynumbers;
         //
-
         // Começar o programa
         private static void Main(string[] args) {
             // Definir o tamanho da arraynumbers
             arraynumbers = new float[args.Length];
             //
             // Guardar o args convertido para int na arraynumbers
-            for(int i = 0; i < arraynumbers.Length; i++) {
+            for (int i = 0; i < arraynumbers.Length; i++) {
                 arraynumbers[i] = float.Parse(args[i]);
             }
             //
@@ -23,11 +21,10 @@ namespace exercicio1
             Array.Sort(arraynumbers);
             //
             // Chamar o método onde o user vai escolher os cálculos
-            Options(); 
+            Options();
             //
         }
         //
-
         // Método onde o user vai escolher os cálculos
         private static void Options() {
             // A escolha do user
@@ -45,14 +42,19 @@ namespace exercicio1
                 Console.WriteLine("\n 6 - Sair \n");
                 userChoice = Console.ReadLine(); // Input do user
                 if (userChoice == "1") {
+                    Console.WriteLine("\n Média \n");
                     Console.WriteLine(Avg(0)); // Método para calcular a média
                 } else if (userChoice == "2") {
+                    Console.WriteLine("\n Mediana \n");
                     Console.WriteLine(Median(0)); // Método para calcular a mediana
                 } else if (userChoice == "3") {
+                    Console.WriteLine("\n Moda \n");
                     Console.WriteLine(Mode(0)); // Método para calcular a moda
                 } else if (userChoice == "4") {
+                    Console.WriteLine("\n Máximo \n");
                     Console.WriteLine(Max(0)); // Método para calcular o máximo
                 } else if (userChoice == "5") {
+                    Console.WriteLine("\n Mínimo \n");
                     Console.WriteLine(Min(0)); // Método para calcular o mínimo
                 } else if (userChoice == "6") {
                     shut = true; // Sair
@@ -63,15 +65,13 @@ namespace exercicio1
             //
         }
         //
-
         // Método para calcular a média
         private static float Avg(float x) {
             float avgresult;
-            Console.WriteLine("\n Média \n");
             // Buscar a soma de todo o conteúdo da arraynumbers
             float sum = 0; // A soma total
             //Foreach para somar toda a arraynumbers
-            foreach(float number in arraynumbers) {
+            foreach (float number in arraynumbers) {
                 sum = sum + number;
             }
             //
@@ -81,11 +81,9 @@ namespace exercicio1
             return avgresult;
         }
         //
-
         // Método para calcular a mediana
         private static float Median(float x) {
             float medianresult;
-            Console.WriteLine("\n Mediana \n");
             if (arraynumbers.Length % 2 == 0) { // Verificar se é par
                 // Verificar quais são os dois números no meio
                 float midhigh = arraynumbers[arraynumbers.Length / 2];
@@ -94,33 +92,29 @@ namespace exercicio1
                 // Fazer a média desses dois números do meio
                 medianresult = (midhigh + midlow) / arraynumbers.Length;
                 //          
-            }
-            else { // Verificar se é ímpar
+            } else { // Verificar se é ímpar
                 // Verificar qual é o número do meio
                 medianresult = arraynumbers[arraynumbers.Length / 2];
                 //
             }
             return medianresult;
         }
-
         // Método para calcular a moda
         private static float Mode(float x) {
-            Console.WriteLine("\n Moda \n");
             float moderesult;
             /* Dicionário onde vai ser verificado cada número e o número 
              * de repetições de cada um
              */
             Dictionary<float, float> count = new Dictionary<float, float>();
-
             /*
              * Foreach para colocar os números como chaves e as respetivas
              * quantidades como valor.
              */
-            foreach(float item in arraynumbers) {
+            foreach (float item in arraynumbers) {
                 /* Se encontrar uma chave repetida, incrementa o valor
                  * dessa mesma chave
                  */
-                if(count.ContainsKey(item)) {
+                if (count.ContainsKey(item)) {
                     count[item]++;
                 } else {
                     /*
@@ -137,26 +131,21 @@ namespace exercicio1
             // Buscar o valor que está no topo (que é o mais alto)
             float maxValue = order[order.Length - 1];
             // Procurar chave do valor máximo no dicionário
-            moderesult = count[maxValue]; 
-
+            moderesult = count[maxValue];
             return moderesult;
         }
         //
-
         // Método para calcular o máximo
         private static float Max(float x) {
             float maxresult;
-            Console.WriteLine("\n Máximo \n");
             // Buscar o número que está no topo da array order
             maxresult = arraynumbers[arraynumbers.Length - 1];
             //
             return maxresult;
         }
-
         // Método para calcular o mínimo
         private static float Min(float x) {
             float minresult;
-            Console.WriteLine("\n Mínimo \n");
             // Buscar o número que está mais abaixo da array order
             minresult = arraynumbers
                 [arraynumbers.Length - arraynumbers.Length];
