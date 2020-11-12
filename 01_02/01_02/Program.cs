@@ -152,15 +152,7 @@ namespace _01_02
         // Método para criar o vetor
         private static void ConstructVector() {
             // Criar o vetor
-            if (matrixcolumns > matrixlines) {
                 vector = new float[matrixcolumns, 1];
-            }
-            else if (matrixcolumns < matrixlines) {
-                vector = new float[matrixlines, 1];
-            }
-            else {
-                vector = new float[matrixcolumns, 1];
-            }
             Console.WriteLine($"O vector tem {vector.Length} elementos");
             //
 
@@ -172,39 +164,7 @@ namespace _01_02
             float value = 0f;
             //
 
-            // Preencher os valores
-            if (matrixcolumns > matrixlines) {
                 for (int i = 0; i < matrixcolumns; i++) {
-                    while (value == 0f) { 
-                        Console.WriteLine($"Insere um número na linha " +
-                            $"{i + 1} na coluna 1: ");
-                    if (i == 0) {
-                            // Mostrar vector
-                        PrintVector();
-                            //
-                    }
-                    // Input do user do valor
-                    userinput = Console.ReadLine();
-                        //
-                    // Converter o input para int
-                    if(float.TryParse(userinput, out value)) {
-                            value = float.Parse(userinput);
-                            // Colocar na linha
-                            vector[i, 0] = value;
-                            //
-                            // Mostrar vector
-                            PrintVector();
-                            //
-                        } else {
-                            Console.WriteLine("Valor inválido, tente de novo");
-                        }
-                    //
-                }
-                    value = default;
-                }
-            }
-            else if (matrixcolumns < matrixlines) {
-                for (int i = 0; i < matrixlines; i++) {
                     while (value == 0f) {
                         Console.WriteLine($"Insere um número na linha " +
                             $"{i + 1} na coluna 1: ");
@@ -231,7 +191,6 @@ namespace _01_02
                     }
                     value = default;
                 }
-            }
             //
         }
         //
@@ -244,7 +203,6 @@ namespace _01_02
             //
 
             // Multiplicar os valores da matriz com o vetor
-            if (matrixcolumns > matrixlines) {
                 for (int n = 0; n < matrix.GetLength(0); n++) {
                     for (int i = 0; i < matrix.GetLength(1); i++) {
                         for (int j = 0; i < vector.GetLength(0); i++) {
@@ -255,23 +213,8 @@ namespace _01_02
 
                     }
                     vectorindex = default;
-                }
                 //
             }
-            else if (matrixcolumns < matrixlines) {
-                for (int n = 0; n < matrix.GetLength(1); n++) {
-                    for (int i = 0; i < matrix.GetLength(0); i++) {
-                        for (int j = 0; i < vector.GetLength(0); i++) {
-                            matrix[i, n] = matrix[i, n]
-                                * vector[vectorindex, 0];
-                            vectorindex++;
-                        }
-
-                    }
-                    vectorindex = default;
-                }
-            }
-            //
         }
         //
 
