@@ -5,7 +5,7 @@ namespace Checker
 {
     class Checker
     {
-        public Checker(int al, int ac, int[,] val, string ui) {
+        public Checker(int[,] val, string ui) {
             // Chamar o método Check()
             Check(val, Convert.ToInt32(ui));
             //
@@ -110,7 +110,7 @@ namespace Checker
             //
 
             // Verificar se o método Check() retoma true
-            _check = new Checker(arraylines, arraycolumns, values, userinput);
+            _check = new Checker(values, userinput);
             //
 
             // Mostrar a array
