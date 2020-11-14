@@ -25,21 +25,16 @@ namespace _01_18
         public int CompareTo(Weapon weapon)
         {
             int returnvalue = 0;
-            if (AttackPower > weapon.AttackPower)
-            {
-                returnvalue = -1;
-            }
-            else if (AttackPower < weapon.AttackPower)
-            {
+            if (weapon == null) {
                 returnvalue = 1;
-            }
-            else if (weapon == null)
-            {
-                returnvalue = 1;
-            }
-            else
-            {
-                returnvalue = 0;
+            } else {
+                if (AttackPower > weapon.AttackPower) {
+                    returnvalue = -1;
+                } else if (AttackPower < weapon.AttackPower) {
+                    returnvalue = 1;
+                } else {
+                    returnvalue = 0;
+                }
             }
             return returnvalue;
         }
