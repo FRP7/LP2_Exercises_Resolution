@@ -8,31 +8,26 @@ namespace _01_14
         /// Score mais alta.
         /// </summary>
         private float topScore;
-        //
 
         /// <summary>
         /// Número de jogos jogados.
         /// </summary>
         private int gamesPlayed;
-        //
 
         /// <summary>
         /// Número de jogos ganhos.
         /// </summary>
         private int gamesWon;
-        //
 
         /// <summary>
         /// Nome do mapa.
         /// </summary>
         public string Name { get; }
-        //
 
         /// <summary>
         /// Nome de ficheiro.
         /// </summary>
         public string Filename { get; }
-        //
 
         /// <summary>
         /// Percentagem de sucesso.
@@ -45,7 +40,6 @@ namespace _01_14
                     return gamesWon / (float)gamesPlayed;
             }
         }
-        //
 
         /// <summary>
         /// Score mais alta.
@@ -60,7 +54,6 @@ namespace _01_14
                 }
             }
         }
-        //
 
         /// <summary>
         /// Construtor que cria objecto e define os valores das respetivas
@@ -75,7 +68,6 @@ namespace _01_14
             gamesWon = 0;
             topScore = 0;
         }
-        //
 
         /// <summary>
         /// Método que verifica se ganhou o jogo e que incrementa a variável 
@@ -89,6 +81,5 @@ namespace _01_14
                 gamesWon++;
             }
         }
-        //
     }
 }

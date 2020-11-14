@@ -41,6 +41,5 @@ namespace _01_14
                     + showTopscore);
             }
         }
-        //
     }
 }
