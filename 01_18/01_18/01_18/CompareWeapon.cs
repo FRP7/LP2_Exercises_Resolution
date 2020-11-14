@@ -11,8 +11,11 @@ namespace _01_18
             int returnvalue = 0;
 
             if(a == null | b == null) {
-                returnvalue = -1;
-            } else {
+                returnvalue = 0;
+            } else if(a == null && b == null) {
+                returnvalue = 0;
+            }
+            else {
                 if (a.Durability > b.Durability) {
                     returnvalue = 1;
                 } else if (a.Durability < b.Durability) {

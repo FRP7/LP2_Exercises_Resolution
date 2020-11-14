@@ -26,7 +26,7 @@ namespace _01_18
         {
             int returnvalue = 0;
             if (weapon == null) {
-                returnvalue = 1;
+                returnvalue = 0;
             } else {
                 if (AttackPower > weapon.AttackPower) {
                     returnvalue = -1;

@@ -15,12 +15,9 @@ namespace _01_18
             // 
 
             // O construtor constrói objetos que são colocados na lista.
-            weaponlist.Add(new Weapon
-                (1, 2f));
-            weaponlist.Add(new Weapon
-                (2, 3f));
-            weaponlist.Add(new Weapon
-                (3, 4f));
+            weaponlist.Add(new Weapon(1, 2f));
+            weaponlist.Add(new Weapon(2, 3f));
+            weaponlist.Add(new Weapon(3, 4f));
             weaponlist.Add(null);
             //
 
@@ -30,8 +27,10 @@ namespace _01_18
             weaponlist.Sort();
             //
                 foreach (Weapon item in weaponlist) {
+                if (item != null) {
                     Console.WriteLine($"Attack power: {item.AttackPower}");
                     Console.WriteLine($"Durability: {item.Durability}");
+                }
                 }
             //
         }
