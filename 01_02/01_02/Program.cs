@@ -35,7 +35,6 @@ namespace _01_02
 
             // Método para expor o resultado
             PrintResult();
-            //
         }
 
         // Método para criar a matriz
@@ -46,20 +45,17 @@ namespace _01_02
             // Input do user para definir o número de colunas da matriz
             string inputMatrixColumns;
 
-
             // Verificar se ficou definido o número de linhas da matriz.
             bool isMatrixLines = false;
 
             // Verificar se ficou definido o número de colunas da matriz.
             bool isMatrixColumns = false;
 
-
             // Número de linhas da matriz.
             int matrixLineValue;
 
             // Número de colunas da matriz
             int matrixColumnValue;
-
 
             // Input do user
             string userInputValue;
@@ -221,7 +217,6 @@ namespace _01_02
 
             // Guardar soma para meter no result
             float sum;
-            
 
             // Somar os valores da matriz
             for (int j = 0; j < Matrix.GetLength(0); j++) {
@@ -231,11 +226,8 @@ namespace _01_02
                 }
                 // Colocar na linha
                 Result[j, 0] = sum;
-                
             }
-            
         }
-        
 
         // Método para mostrar o resultado 
         private static void PrintResult() {
@@ -248,23 +240,19 @@ namespace _01_02
             // Resultado
             string resultString = "";
             
-
             for (int i = 0; i < rowLength; i++) {
                 for (int j = 0; j < colLength; j++) {
                     // Colocar os valores de result
                     resultString += Result[i, j].ToString();
-                    
                 }
                 // Colocar nova linha 
                 resultString += Environment.NewLine + Environment.NewLine;
-                
             }
             // Mostrar resultado
             Console.WriteLine("Resultado:");
             Console.WriteLine(resultString);
             
         }
-        //
 
         // Método para mostrar a matriz 
         private static void PrintMatrix() {
@@ -281,8 +269,7 @@ namespace _01_02
             for (int i = 0; i < rowLength; i++) {
                 for (int j = 0; j < colLength; j++) {
                     // Colocar os valores de result
-                    matrixString += Matrix[i, j].ToString() + " ";
-                    
+                    matrixString += Matrix[i, j].ToString() + " ";           
                 }
                 // Colocar nova linha 
                 matrixString += Environment.NewLine + Environment.NewLine;
@@ -290,8 +277,7 @@ namespace _01_02
             }
             // Mostrar resultado
             Console.WriteLine("Matriz: ");
-            Console.WriteLine(matrixString);
-            
+            Console.WriteLine(matrixString);          
         }
 
         // Método para mostrar o vector 
@@ -309,12 +295,10 @@ namespace _01_02
             for (int i = 0; i < rowLength; i++) {
                 for (int j = 0; j < colLength; j++) {
                     // Colocar os valores de result
-                    matrixString += Vector[i, j].ToString() + " ";
-                    
+                    matrixString += Vector[i, j].ToString() + " ";                   
                 }
                 // Colocar nova linha 
-                matrixString += Environment.NewLine + Environment.NewLine;
-                
+                matrixString += Environment.NewLine + Environment.NewLine;                
             }
             // Mostrar resultado
             Console.WriteLine("Vector: ");
