@@ -5,37 +5,32 @@ namespace _01_14
     public struct GameMap
     {
         /// <summary>
-        /// Variável da score mais alta.
+        /// Score mais alta.
         /// </summary>
         private float topScore;
-        //
 
         /// <summary>
-        /// Variável do número de jogos jogados.
+        /// Número de jogos jogados.
         /// </summary>
         private int gamesPlayed;
-        //
 
         /// <summary>
-        /// Variável do número de jogos ganhos.
+        /// Número de jogos ganhos.
         /// </summary>
         private int gamesWon;
-        //
 
         /// <summary>
-        /// Variável auto implementada de leitura do nome do mapa.
+        /// Nome do mapa.
         /// </summary>
         public string Name { get; }
-        //
 
         /// <summary>
-        /// Variável auto implementada de leitura do nome de ficheiro.
+        /// Nome de ficheiro.
         /// </summary>
         public string Filename { get; }
-        //
 
         /// <summary>
-        /// Variável de leitura da percentagem de sucesso.
+        /// Percentagem de sucesso.
         /// </summary>
         public float SuccessRate {
             get {
@@ -45,10 +40,9 @@ namespace _01_14
                     return gamesWon / (float)gamesPlayed;
             }
         }
-        //
 
         /// <summary>
-        /// Variável do score mais alto.
+        /// Score mais alta.
         /// </summary>
         public float TopScore {
             get {
@@ -60,7 +54,6 @@ namespace _01_14
                 }
             }
         }
-        //
 
         /// <summary>
         /// Construtor que cria objecto e define os valores das respetivas
@@ -68,14 +61,13 @@ namespace _01_14
         /// </summary>
         /// <param name="name"> Nome do mapa. </param>
         /// <param name="filename"> Nome do ficheiro </param>
-        public GameMap(string name, string filename) {
+        public GameMap(string name, string fileName) {
             Name = name;
-            Filename = filename;
+            Filename = fileName;
             gamesPlayed = 0;
             gamesWon = 0;
             topScore = 0;
         }
-        //
 
         /// <summary>
         /// Método que verifica se ganhou o jogo e que incrementa a variável 
@@ -89,6 +81,5 @@ namespace _01_14
                 gamesWon++;
             }
         }
-        //
     }
 }
