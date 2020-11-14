@@ -29,11 +29,16 @@ namespace _01_14
             Console.WriteLine("--------------------------------------------------------");
             
             for (int i = 0; i < gamemap.Length; i++) {
-                string showname = string.Format("{0,0}", gamemap[i].Name);
+                /*string showname = string.Format("{0,0}", gamemap[i].Name);
                 string showfilename = string.Format("{0,22}", gamemap[i].Filename);
                 string showsuccessrate = string.Format("{0,12:p1}", gamemap[i].SuccessRate);
-                string showtopscore = string.Format("{0,13:F3}", gamemap[i].TopScore);
-                Console.WriteLine(showname + showfilename + showsuccessrate + showtopscore);
+                string showtopscore = string.Format("{0,13:F3}", gamemap[i].TopScore);*/
+                string showname = gamemap[i].Name;
+                string showfilename = "\t\t" + gamemap[i].Filename;
+                string showsuccessrate = string.Format("\t{0:p1}", gamemap[i].SuccessRate);
+                string showtopscore = string.Format("\t{0,13:F3}", gamemap[i].TopScore); 
+                 //Console.WriteLine(showname + showfilename + showsuccessrate + showtopscore);
+                 Console.WriteLine(showname + showfilename + showsuccessrate + showtopscore);
             }
         }
         //
