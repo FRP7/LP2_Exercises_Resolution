@@ -30,6 +30,19 @@ namespace _01_18
                     Console.WriteLine($"Durability: {item.Durability}");
                 }
             }
+
+            // Mostrar as Weapons por ordem crescente pela Durability.
+            Console.WriteLine("Weapons por ordem crescente pela Durability");
+
+            // Ordenar (ordem crescente pela Durability)
+            weaponList.Sort(_compareWeapon);
+
+            foreach (Weapon item in weaponList) {
+                if (item != null) {
+                    Console.WriteLine($"Attack power: {item.AttackPower}");
+                    Console.WriteLine($"Durability: {item.Durability}");
+                }
+            }
         }
     }
 }
