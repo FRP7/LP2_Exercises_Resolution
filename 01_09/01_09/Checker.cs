@@ -15,7 +15,7 @@ namespace _01_09
             int arrayColumns = 0;
 
             // Array final
-            int[,] values;
+            float[,] values;
 
             // Nova instância de Checker
             Checker _check;
@@ -30,7 +30,7 @@ namespace _01_09
             bool isValue = false;
 
             // O valor do input do user
-            int value = 0;
+            float value = 0;
 
             // Definir o número de linhas
             while (isMatrixLine == false) {
@@ -74,7 +74,7 @@ namespace _01_09
             }
 
             // Definir o tamanho da array values
-            values = new int[arrayLines, arrayColumns];
+            values = new float[arrayLines, arrayColumns];
 
             Console.WriteLine($"Tem {arrayLines * arrayColumns} slots");
             // Pedir os valores e colocar na array values
@@ -89,7 +89,7 @@ namespace _01_09
 
                             /* Tentar converter o input para float
                              * e colocar na array */
-                            if (Int32.TryParse(userInput, out value)) {
+                            if (float.TryParse(userInput, out value)) {
                                 values[x, y] = value;
                                 PrintArray(values);
 
@@ -118,7 +118,7 @@ namespace _01_09
             PrintArray(values);
 
 
-            if (_check.Check(values, Convert.ToInt32(userInput)) == true) {
+            if (_check.Check(values, float.Parse(userInput))) {
                 Console.WriteLine("Existe linha");
             } else {
                 Console.WriteLine("Não existe linha");
@@ -129,7 +129,7 @@ namespace _01_09
          * para procurar.
          * Retoma true se encontrar.
          */
-        private bool Check(int[,] x, int ui) {
+        private bool Check(float[,] x, float ui) {
             // Contar a quantidade de valores seguidos na array x
             int sum = 0;
 
@@ -230,7 +230,7 @@ namespace _01_09
             }
         }
         // Método para mostrar a array
-        private static void PrintArray(int[,] val) {
+        private static void PrintArray(float[,] val) {
             // Tamanho da linha
             int rowLength = val.GetLength(0);
 
