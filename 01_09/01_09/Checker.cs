@@ -218,15 +218,15 @@ namespace _01_09
             /* Verificar linhas diagonais cima para baixo, direita para 
             esquerda*/
             for (int n = 0; n < 1; n++) {
-                    for (int j = x.GetLength(1) - 1; j > 0; j--) {
+                    for (int j = x.GetLength(1) - 1; j >= 0; j--) {
                         /* Verificar se existe um valor igual ao que o user 
                         escolheu*/
                         // Incrementa se for igual
-                        if (x[j, 0] == ui) {
+                        if (x[index, j] == ui) {
                             sum++;
                         }
                         // Descrementa se não for igual
-                        else if (x[j, 0] != ui) {
+                        else if (x[index, j] != ui) {
                             sum--;
                         }
 
@@ -235,10 +235,7 @@ namespace _01_09
                             isfour = true;
                         }
                     index++;
-                    //testar, delete later
-                    Console.WriteLine("Elemento:" + x[j,j]);
-                    Console.WriteLine("Sum: " + sum);
-                    }
+                }
             }
 
             // Verificar se foi encontrado quatro valores seguidos 
