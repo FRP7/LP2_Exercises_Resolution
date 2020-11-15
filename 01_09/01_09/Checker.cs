@@ -4,8 +4,6 @@ namespace _01_09
 {
     class Checker
     {
-        public Checker(int[,] val, string ui) {
-        }
         private static void Main(string[] args) {
             // Input do user
             string userInput;
@@ -101,7 +99,8 @@ namespace _01_09
 
 
             // Verificar se o método Check() retoma true
-            _check = new Checker(values, userInput);
+            //_check = new Checker(values, userInput);
+            _check = new Checker();
 
 
             // Mostrar a array
