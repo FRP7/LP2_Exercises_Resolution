@@ -136,7 +136,7 @@ namespace _01_09
             int index = 0;
 
             // Verificar se tem quatro valores seguidos
-            bool isfour = false;
+            bool isFour = false;
 
 
             // Verificar linhas horizontais
@@ -159,7 +159,7 @@ namespace _01_09
 
                 // Verificar se existe quatro números seguidos
                 if (sum >= 4) {
-                    isfour = true;
+                    isFour = true;
                 }
             }
 
@@ -184,7 +184,7 @@ namespace _01_09
                 }
                 // Verificar se existe quatro números seguidos
                 if (sum >= 4) {
-                    isfour = true;
+                    isFour = true;
                 }
             }
 
@@ -207,7 +207,7 @@ namespace _01_09
 
                         // Verificar se existe quatro números seguidos
                         if (sum >= 4) {
-                            isfour = true;
+                            isFour = true;
                         }
                     }
                 }
@@ -234,7 +234,7 @@ namespace _01_09
 
                         // Verificar se existe quatro números seguidos
                         if (sum >= 4) {
-                            isfour = true;
+                            isFour = true;
                         }
                         index++;
                     }
@@ -242,7 +242,7 @@ namespace _01_09
             }
 
             // Verificar se foi encontrado quatro valores seguidos 
-            if (isfour == true) {
+            if (isFour == true) {
                 return true;
             } else {
                 return false;
