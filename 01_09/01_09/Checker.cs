@@ -192,15 +192,15 @@ namespace _01_09
 
             /* Verificar linhas diagonais cima para baixo, 
              * esquerda para direita */
-            for (int n = 0; n < 1; n++) {
-                for (int z = 0; z < x.GetLength(0); z++) {
+            if (x.GetLength(0) == x.GetLength(1)) {
+                for (int n = 0; n < 1; n++) {
+                    for (int z = 0; z < x.GetLength(0); z++) {
                         /* Verificar se existe um valor igual ao que o
                          * user escolheu */
                         if (x[z, z] == ui) {
                             // Incrementa se for igual
                             sum++;
-                        }
-                        else if (x[z, z] != ui) {
+                        } else if (x[z, z] != ui) {
                             // Descrementa se não for igual
                             sum--;
                         }
@@ -209,6 +209,7 @@ namespace _01_09
                         if (sum >= 4) {
                             isfour = true;
                         }
+                    }
                 }
             }
 
@@ -217,7 +218,8 @@ namespace _01_09
 
             /* Verificar linhas diagonais cima para baixo, direita para 
             esquerda*/
-            for (int n = 0; n < 1; n++) {
+            if (x.GetLength(0) == x.GetLength(1)) {
+                for (int n = 0; n < 1; n++) {
                     for (int j = x.GetLength(1) - 1; j >= 0; j--) {
                         /* Verificar se existe um valor igual ao que o user 
                         escolheu*/
@@ -234,7 +236,8 @@ namespace _01_09
                         if (sum >= 4) {
                             isfour = true;
                         }
-                    index++;
+                        index++;
+                    }
                 }
             }
 
