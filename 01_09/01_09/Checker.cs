@@ -133,6 +133,8 @@ namespace _01_09
             // Contar a quantidade de valores seguidos na array x
             int sum = 0;
 
+            int index = 0;
+
             // Verificar se tem quatro valores seguidos
             bool isfour = false;
 
@@ -146,8 +148,12 @@ namespace _01_09
                     /* Verificar se existe um valor igual ao que
                      * o user escolheu */
                     if (x[n, j] == ui) {
-                        // Soma
+                        // Incrementa se for igual
                         sum++;
+                    }
+                    else if (x[n, j] != ui) {
+                        // Descrementa se não for igual
+                        sum--;
                     }
                 }
 
@@ -168,8 +174,12 @@ namespace _01_09
                     /* Verificar se existe um valor igual ao que o 
                      * user escolheu */
                     if (x[n, j] == ui) {
-                        // Soma
+                        // Incrementa se for igual
                         sum++;
+                    }
+                    else if (x[n, j] != ui) {
+                        // Descrementa se não for igual
+                        sum--;
                     }
                 }
                 // Verificar se existe quatro números seguidos
@@ -184,19 +194,21 @@ namespace _01_09
              * esquerda para direita */
             for (int n = 0; n < 1; n++) {
                 for (int z = 0; z < x.GetLength(0); z++) {
-                    for (int j = 0; j < x.GetLength(1); j++) {
                         /* Verificar se existe um valor igual ao que o
                          * user escolheu */
-                        if (x[z, j] == ui) {
-                            // Soma
+                        if (x[z, z] == ui) {
+                            // Incrementa se for igual
                             sum++;
+                        }
+                        else if (x[z, z] != ui) {
+                            // Descrementa se não for igual
+                            sum--;
                         }
 
                         // Verificar se existe quatro números seguidos
                         if (sum >= 4) {
                             isfour = true;
                         }
-                    }
                 }
             }
 
@@ -206,20 +218,27 @@ namespace _01_09
             /* Verificar linhas diagonais cima para baixo, direita para 
             esquerda*/
             for (int n = 0; n < 1; n++) {
-                for (int z = 0; z < x.GetLength(0); z++) {
-                    for (int j = x.GetLength(1) - 1; j >= 0; j--) {
+                    for (int j = x.GetLength(1) - 1; j > 0; j--) {
                         /* Verificar se existe um valor igual ao que o user 
                         escolheu*/
-                        if (x[z, j] == ui) {
+                        // Incrementa se for igual
+                        if (x[j, 0] == ui) {
                             sum++;
+                        }
+                        // Descrementa se não for igual
+                        else if (x[j, 0] != ui) {
+                            sum--;
                         }
 
                         // Verificar se existe quatro números seguidos
                         if (sum >= 4) {
                             isfour = true;
                         }
+                    index++;
+                    //testar, delete later
+                    Console.WriteLine("Elemento:" + x[j,j]);
+                    Console.WriteLine("Sum: " + sum);
                     }
-                }
             }
 
             // Verificar se foi encontrado quatro valores seguidos 
