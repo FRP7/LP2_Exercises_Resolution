@@ -79,8 +79,13 @@ namespace _01_02
 
                 // Tentar convertar o input para int
                 if (Int32.TryParse(inputMatrixLines, out matrixLineValue)) {
-                    MatrixLines = matrixLineValue;
-                    isMatrixLines = true;
+                    // Verificar se o input não é zero.
+                    if (matrixLineValue >= 1) {
+                        MatrixLines = matrixLineValue;
+                        isMatrixLines = true;
+                    } else {
+                        Console.WriteLine("Valor inválido, tente de novo.");
+                    }
                 } else {
                     Console.WriteLine("Valor inválido, tente de novo.");
                 }
@@ -96,8 +101,13 @@ namespace _01_02
 
                 // Tentar converter o input para int
                 if (Int32.TryParse(inputMatrixColumns,out matrixColumnValue)) {
-                    MatrixColumns = matrixColumnValue;
-                    isMatrixColumns = true;
+                    if (matrixColumnValue >= 1) {
+                        MatrixColumns = matrixColumnValue;
+                        isMatrixColumns = true;
+                    }
+                    else {
+                        Console.WriteLine("Valor inválido, tente de novo.");
+                    }
                 } else {
                     Console.WriteLine("Valor inválido, tente de novo.");
                 }
