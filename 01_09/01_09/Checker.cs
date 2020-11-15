@@ -40,7 +40,13 @@ namespace _01_09
 
                 // Tentar convertar o input para int
                 if (Int32.TryParse(userInput, out arrayLines)) {
-                    isMatrixLine = true;
+                    // Verificar se o número de linhas não é zero ou negativo.
+                    if (arrayLines >= 1) {
+                        isMatrixLine = true;
+                    }
+                    else {
+                        Console.WriteLine("Valor inválido, tente de novo.");
+                    }
                 } else {
                     Console.WriteLine("Valor inválido, tente de novo.");
                 }
@@ -55,7 +61,12 @@ namespace _01_09
 
                 // Tentar convertar o input para int
                 if (Int32.TryParse(userInput, out arrayColumns)) {
-                    isMatrixColumn = true;
+                    // Verificar se o número de colunas não é zero ou negativo.
+                    if (arrayColumns >= 1) {
+                        isMatrixColumn = true;
+                    } else {
+                        Console.WriteLine("Valor inválido, tente de novo.");
+                    }
                 } else {
                     Console.WriteLine("Valor inválido, tente de novo.");
                 }
