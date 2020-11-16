@@ -32,7 +32,7 @@ namespace _01_14
         /// <summary>
         /// Percentagem de sucesso.
         /// </summary>
-        public float SuccessRate {
+        public float SucessRate {
             get {
                 if (gamesPlayed == 0)
                     return 0f;
@@ -73,7 +73,7 @@ namespace _01_14
         /// Método que incrementa gamesPlayed e Gameswon (este último sendo 
         /// caso um jogo seja ganho).
         /// </summary>
-        /// <param name="won"> Bool que verifica se ganhou o jogo. </param>
+        /// <param name="won"> Bool que indica se ganhou um jogo. </param>
         public void GamePlayed(bool won) {
             gamesPlayed++;
             if (won) {
