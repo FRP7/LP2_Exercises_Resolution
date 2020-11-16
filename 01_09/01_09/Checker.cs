@@ -150,16 +150,15 @@ namespace _01_09
                     if (x[n, j] == ui) {
                         // Incrementa se for igual
                         sum++;
+                        // Verificar se existe quatro números seguidos
+                        if (sum >= 4) {
+                            isFour = true;
+                        }
                     }
                     else if (x[n, j] != ui) {
                         // Descrementa se não for igual
                         sum--;
                     }
-                }
-
-                // Verificar se existe quatro números seguidos
-                if (sum >= 4) {
-                    isFour = true;
                 }
             }
 
@@ -176,15 +175,15 @@ namespace _01_09
                     if (x[n, j] == ui) {
                         // Incrementa se for igual
                         sum++;
+                        // Verificar se existe quatro números seguidos
+                        if (sum >= 4) {
+                            isFour = true;
+                        }
                     }
                     else if (x[n, j] != ui) {
                         // Descrementa se não for igual
                         sum--;
                     }
-                }
-                // Verificar se existe quatro números seguidos
-                if (sum >= 4) {
-                    isFour = true;
                 }
             }
 
@@ -200,14 +199,13 @@ namespace _01_09
                         if (x[z, z] == ui) {
                             // Incrementa se for igual
                             sum++;
+                            // Verificar se existe quatro números seguidos
+                            if (sum >= 4) {
+                                isFour = true;
+                            }
                         } else if (x[z, z] != ui) {
                             // Descrementa se não for igual
                             sum--;
-                        }
-
-                        // Verificar se existe quatro números seguidos
-                        if (sum >= 4) {
-                            isFour = true;
                         }
                     }
                 }
@@ -226,15 +224,14 @@ namespace _01_09
                         // Incrementa se for igual
                         if (x[index, j] == ui) {
                             sum++;
+                            // Verificar se existe quatro números seguidos
+                            if (sum >= 4) {
+                                isFour = true;
+                            }
                         }
                         // Descrementa se não for igual
                         else if (x[index, j] != ui) {
                             sum--;
-                        }
-
-                        // Verificar se existe quatro números seguidos
-                        if (sum >= 4) {
-                            isFour = true;
                         }
                         index++;
                     }
