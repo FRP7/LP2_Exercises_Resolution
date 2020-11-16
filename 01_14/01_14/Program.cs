@@ -9,12 +9,11 @@ namespace _01_14
         /// </summary>
         /// <param name="args"></param>
         private static void Main(string[] args) {
-            Rating(new GameMap[6] {
+            Rating(new GameMap[5] {
             new GameMap ("Earth", "earth.map"),
                 new GameMap ("Moon", "moon.map"),
                 new GameMap ("Mars", "mars.map"),
                 new GameMap ("Jupiter", "jupiter.map"),
-                new GameMap ("TestePlanet123", "testeplanet123.map"),
                 new GameMap ("Uranus", "uranus.map") }
             );
         }
@@ -32,14 +31,20 @@ namespace _01_14
                 "-------------");
 
             for (int i = 0; i < gamemap.Length; i++) {
-                string showName = gamemap[i].Name;
+                /*string showName = gamemap[i].Name;
                 string showFilename = "\t\t" + gamemap[i].Filename;
                 string showSuccessrate = string.Format("\t{0:p1}",
                     gamemap[i].SuccessRate);
                 string showTopscore = string.Format("\t{0,13:F3}",
-                    gamemap[i].TopScore);
-                Console.WriteLine(showName + showFilename + showSuccessrate
-                    + showTopscore);
+                    gamemap[i].TopScore);*/
+                /*Console.WriteLine(showName + showFilename + showSuccessrate
+                    + showTopscore);*/
+                string[] showNames = { $"{gamemap[i].Name}" };
+                string[] showFilename = { $"{gamemap[i].Filename}" };
+                for(int j = 0; j < showNames.Length; j++) {
+                    Console.WriteLine("{0,-17} {1,5}", showNames[j], showFilename[j]);
+                }
+                Console.WriteLine();
             }
         }
 
