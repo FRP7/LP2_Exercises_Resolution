@@ -11,7 +11,7 @@ namespace _01_14
         private static void Main(string[] args) {
             Rating(new GameMap[5] {
             new GameMap ("Earth", "earth.map"),
-                new GameMap ("Moon123", "moon.map"),
+                new GameMap ("Moon", "moon.map"),
                 new GameMap ("Mars", "mars.map"),
                 new GameMap ("Jupiter", "jupiter.map"),
                 new GameMap ("Uranus", "uranus.map") }
@@ -31,7 +31,7 @@ namespace _01_14
                 "-------------");
 
             for (int i = 0; i < gameMap.Length; i++) {
-                string showName = string.Format("{0,-17}", gameMap[i].Name);
+                string showName = string.Format("{0,-18}", gameMap[i].Name);
                 string showFileName = string.Format("{0,-16}", 
                     gameMap[i].Filename);
                 string showSuccessRate = string.Format("{0,-15:p1}", 
