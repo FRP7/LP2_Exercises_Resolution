@@ -9,7 +9,7 @@ namespace _01_14
         /// </summary>
         /// <param name="args"></param>
         private static void Main(string[] args) {
-            DrawMap(new GameMap[5] {
+            PrintRating(new GameMap[5] {
             new GameMap ("Earth", "earth.map"),
                 new GameMap ("Moon", "moon.map"),
                 new GameMap ("Mars", "mars.map"),
@@ -23,22 +23,22 @@ namespace _01_14
         /// </summary>
         /// <param name="gamemap"> Array onde vão ser guardados os mapas para
         /// expor os dados</param>
-        public static void DrawMap(GameMap[] gamemap) {
-
-            Console.WriteLine("Name              Filename      Sucess Rate " +
-                "   Top Score");
+        public static void PrintRating(GameMap[] gameMap) {
+            Console.WriteLine("Name              Filename     " +
+                " Sucess Rate     Top Score");
             Console.WriteLine("-------------------------------------------" +
                 "-------------");
 
-            for (int i = 0; i < gamemap.Length; i++) {
-                string showName = gamemap[i].Name;
-                string showFilename = "\t\t" + gamemap[i].Filename;
-                string showSuccessrate = string.Format("\t{0:p1}",
-                    gamemap[i].SuccessRate);
-                string showTopscore = string.Format("\t{0,13:F3}",
-                    gamemap[i].TopScore);
-                Console.WriteLine(showName + showFilename + showSuccessrate
-                    + showTopscore);
+            for (int i = 0; i < gameMap.Length; i++) {
+                string showName = string.Format("{0,-18}", gameMap[i].Name);
+                string showFileName = string.Format("{0,-16}",
+                    gameMap[i].Filename);
+                string showSucessRate = string.Format("{0,-15:p1}",
+                    gameMap[i].SucessRate);
+                string showTopScore = string.Format("{0,0:F3}",
+                    gameMap[i].TopScore);
+                Console.WriteLine(showName + showFileName + showSucessRate +
+                    showTopScore);
             }
         }
     }
