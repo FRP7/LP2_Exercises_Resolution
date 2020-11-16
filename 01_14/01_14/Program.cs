@@ -42,5 +42,13 @@ namespace _01_14
                     + showTopscore);
             }
         }
+
+        //dados (delete later):
+        /*
+            * name: 1-5 px
+            filenae: 19-27px
+            sucess rate: 33-45px
+            top score: 47-57px
+         */
     }
 }
