@@ -9,11 +9,12 @@ namespace _01_14
         /// </summary>
         /// <param name="args"></param>
         private static void Main(string[] args) {
-            DrawMap(new GameMap[5] {
+            Rating(new GameMap[6] {
             new GameMap ("Earth", "earth.map"),
                 new GameMap ("Moon", "moon.map"),
                 new GameMap ("Mars", "mars.map"),
                 new GameMap ("Jupiter", "jupiter.map"),
+                new GameMap ("TestePlanet123", "testeplanet123.map"),
                 new GameMap ("Uranus", "uranus.map") }
             );
         }
@@ -23,7 +24,7 @@ namespace _01_14
         /// </summary>
         /// <param name="gamemap"> Array onde vão ser guardados os mapas para
         /// expor os dados</param>
-        public static void DrawMap(GameMap[] gamemap) {
+        public static void Rating(GameMap[] gamemap) {
 
             Console.WriteLine("Name              Filename      Sucess Rate " +
                 "   Top Score");

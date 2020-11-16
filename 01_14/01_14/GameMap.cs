@@ -64,15 +64,14 @@ namespace _01_14
         public GameMap(string name, string fileName) {
             Name = name;
             Filename = fileName;
-            gamesPlayed = 0;
-            gamesWon = 0;
-            topScore = 0;
+            gamesPlayed = 100;
+            gamesWon = 50;
+            topScore = 10;
         }
 
         /// <summary>
-        /// Método que verifica se ganhou o jogo e que incrementa a variável 
-        /// de jogos jogados. Caso ganhe, incrementa a variável do número de
-        /// jogos ganhos.
+        /// Método que incrementa gamesPlayed e Gameswon (este último sendo 
+        /// caso um jogo seja ganho).
         /// </summary>
         /// <param name="won"> Bool que verifica se ganhou o jogo. </param>
         public void GamePlayed(bool won) {
