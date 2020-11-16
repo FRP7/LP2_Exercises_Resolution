@@ -113,7 +113,6 @@ namespace _01_09
 
 
             // Verificar se o método Check() retoma true
-            //_check = new Checker(values, userInput);
             _check = new Checker();
 
 
