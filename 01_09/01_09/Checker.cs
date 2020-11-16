@@ -29,6 +29,9 @@ namespace _01_09
             // Verificar se os elementos estão preenchidos
             bool isValue = false;
 
+            // Verificar se foi colocado valor
+            bool isAdded = false;
+
             // O valor do input do user
             int value = 0;
 
@@ -81,7 +84,7 @@ namespace _01_09
             while (isValue == false) {
                 for (int x = 0; x < arrayLines; x++) {
                     for (int y = 0; y < arrayColumns; y++) {
-                        while (value == 0) {
+                        while (isAdded == false) {
                             Console.WriteLine($"Insere um valor na" +
                                 $" linha {x + 1} na coluna {y + 1}");
                             // Input do user
@@ -92,13 +95,13 @@ namespace _01_09
                             if (int.TryParse(userInput, out value)) {
                                 values[x, y] = value;
                                 PrintArray(values);
-
+                                isAdded = true;
                             } else {
                                 Console.WriteLine
                                     ("Valor inválido, tente de novo");
                             }
                         }
-                        value = default;
+                        isAdded = false;
                     }
                     isValue = true;
                 }
