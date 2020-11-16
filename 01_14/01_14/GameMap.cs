@@ -64,9 +64,9 @@ namespace _01_14
         public GameMap(string name, string fileName) {
             Name = name;
             Filename = fileName;
-            gamesPlayed = 100;
-            gamesWon = 50;
-            topScore = 10;
+            gamesPlayed = 0;
+            gamesWon = 0;
+            topScore = 0;
         }
 
         /// <summary>
