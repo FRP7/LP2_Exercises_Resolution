@@ -11,7 +11,7 @@ namespace _01_14
         private static void Main(string[] args) {
             Rating(new GameMap[5] {
             new GameMap ("Earth", "earth.map"),
-                new GameMap ("Moon", "moon.map"),
+                new GameMap ("Moon123", "moon.map"),
                 new GameMap ("Mars", "mars.map"),
                 new GameMap ("Jupiter", "jupiter.map"),
                 new GameMap ("Uranus", "uranus.map") }
@@ -23,29 +23,24 @@ namespace _01_14
         /// </summary>
         /// <param name="gamemap"> Array onde vão ser guardados os mapas para
         /// expor os dados</param>
-        public static void Rating(GameMap[] gamemap) {
+        public static void Rating(GameMap[] gameMap) {
 
             Console.WriteLine("Name              Filename      Sucess Rate " +
                 "   Top Score");
             Console.WriteLine("-------------------------------------------" +
                 "-------------");
 
-            for (int i = 0; i < gamemap.Length; i++) {
-                string showNames = $"{gamemap[i].Name}";
-                string showFilename = $"{gamemap[i].Filename}";
-                string showSuccessrate = $"{gamemap[i].SuccessRate}";
-                string showTopScore = $"{gamemap[i].TopScore}";
-                Console.WriteLine("{0,-17} {1,-13} {1,-14} {1,5}",
-                    showNames, showFilename, showSuccessrate, showTopScore);
+            for (int i = 0; i < gameMap.Length; i++) {
+                string showName = string.Format("{0,-17}", gameMap[i].Name);
+                string showFileName = string.Format("{0,-16}", 
+                    gameMap[i].Filename);
+                string showSuccessRate = string.Format("{0,-15:p1}", 
+                    gameMap[i].SuccessRate);
+                string showTopScore = string.Format("{0,0:F3}", 
+                    gameMap[i].TopScore);
+                Console.WriteLine(showName + showFileName + showSuccessRate + 
+                    showTopScore);
             }
         }
-
-        //dados (delete later):
-        /*
-            * name: 1-5 px
-            filenae: 19-27px
-            sucess rate: 33-45px
-            top score: 47-57px
-         */
     }
 }
