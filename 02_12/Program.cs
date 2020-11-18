@@ -5,7 +5,7 @@ namespace _02_12
     class Program
     {
         static void Main(string[] args) {
-            Console.WriteLine("Hello World!");
+            IWeapon weapon1 = new MeleeAdapter(new Knife());
         }
     }
 }
