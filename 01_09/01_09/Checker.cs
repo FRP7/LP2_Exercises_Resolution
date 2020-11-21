@@ -278,26 +278,26 @@ namespace _01_09
             // experimentar
             int add = 0;
             if (x.GetLength(0) == x.GetLength(1)) {
-                for (int i = 0; i < x.GetLength(0); i++) {
-                    add = 0;
-                    for (int z = x.GetLength(0) - 1; z >= 0; z--) {
+                    for (int i = 0; i < x.GetLength(0); i++) {
+                        add = 0;
+                        for (int z = x.GetLength(0) - 1; z >= 0; z--) {
                         /* Verificar se existe um valor igual ao que o
                          * user escolheu */
-                        if (x[add, z] == ui) {
-                            // Incrementa se for igual
-                            Console.WriteLine($"Iteração {add}. Elemento {x[add, z]}"); //teste, delete later
-                            sum++;
-                            // Verificar se existe quatro números seguidos
-                            if (sum >= 4) {
-                                isFour = true;
+                        if (x[add + i, z] == ui) {
+                                // Incrementa se for igual
+                                Console.WriteLine($"Iteração {z}. Elemento {x[add + i, z]}"); //teste, delete later
+                                sum++;
+                                // Verificar se existe quatro números seguidos
+                                if (sum >= 4) {
+                                    isFour = true;
+                                }
+                            } else if (x[add + i, z] != ui) {
+                                // Descrementa se não for igual
+                                Console.WriteLine($"Iteração {z}. Elemento {x[add + i, z]}"); //teste, delete later
+                                sum--;
                             }
-                        } else if (x[add, z] != ui) {
-                            // Descrementa se não for igual
-                            Console.WriteLine($"Iteração {add}. Elemento {x[add, z]}"); //teste, delete later
-                            sum--;
+                            add++;
                         }
-                        add++;
-                    }
                 }
             }
 
