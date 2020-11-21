@@ -194,24 +194,32 @@ namespace _01_09
             /* Verificar linhas diagonais cima para baixo, 
              * esquerda para direita */
             if (x.GetLength(0) == x.GetLength(1)) {
-                for (int n = 0; n < 1; n++) {
-                    for (int z = 0; z < x.GetLength(0); z++) {
-                        /* Verificar se existe um valor igual ao que o
-                         * user escolheu */
-                        if (x[z, z] == ui) {
-                            // Incrementa se for igual
-                            sum++;
-                            // Verificar se existe quatro números seguidos
-                            if (sum >= 4) {
-                                isFour = true;
+                for (int i = 0; i < x.GetLength(0); i++) {
+                    for (int n = 0; n < 1; n++) {
+                        for (int z = 0; z < x.GetLength(0) - i; z++) {
+                            /* Verificar se existe um valor igual ao que o
+                             * user escolheu */
+                            if (x[z + i, z] == ui) {
+                                // Incrementa se for igual
+                                Console.WriteLine("Elemento: " + x[z + i, z]); //teste, delete later
+                                sum++;
+                                // Verificar se existe quatro números seguidos
+                                if (sum >= 4) {
+                                    isFour = true;
+                                }
+                            } else if (x[z + i, z] != ui) {
+                                // Descrementa se não for igual
+                                Console.WriteLine("Elemento: " + x[z + i, z]); //teste, delete later
+                                sum--;
                             }
-                        } else if (x[z, z] != ui) {
-                            // Descrementa se não for igual
-                            sum--;
                         }
                     }
+                    sum = default;
                 }
             }
+
+            // Retomar a soma a zero
+            sum = default;
 
             // Retomar a soma a zero
             sum = default;
