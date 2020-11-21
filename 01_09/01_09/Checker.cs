@@ -46,8 +46,7 @@ namespace _01_09
                     // Verificar se o número de linhas não é zero ou negativo.
                     if (arrayLines >= 1) {
                         isMatrixLine = true;
-                    }
-                    else {
+                    } else {
                         Console.WriteLine("Valor inválido, tente de novo.");
                     }
                 } else {
@@ -156,8 +155,7 @@ namespace _01_09
                         if (sum >= 4) {
                             isFour = true;
                         }
-                    }
-                    else if (x[n, j] != ui) {
+                    } else if (x[n, j] != ui) {
                         // Descrementa se não for igual
                         sum--;
                     }
@@ -181,8 +179,7 @@ namespace _01_09
                         if (sum >= 4) {
                             isFour = true;
                         }
-                    }
-                    else if (x[n, j] != ui) {
+                    } else if (x[n, j] != ui) {
                         // Descrementa se não for igual
                         sum--;
                     }
@@ -201,7 +198,7 @@ namespace _01_09
                              * user escolheu */
                             if (x[z + i, z] == ui) {
                                 // Incrementa se for igual
-                                Console.WriteLine("Elemento: " + x[z + i, z]); //teste, delete later
+                                //Console.WriteLine("Elemento: " + x[z + i, z]); //teste, delete later
                                 sum++;
                                 // Verificar se existe quatro números seguidos
                                 if (sum >= 4) {
@@ -209,7 +206,7 @@ namespace _01_09
                                 }
                             } else if (x[z + i, z] != ui) {
                                 // Descrementa se não for igual
-                                Console.WriteLine("Elemento: " + x[z + i, z]); //teste, delete later
+                                //Console.WriteLine("Elemento: " + x[z + i, z]); //teste, delete later
                                 sum--;
                             }
                         }
@@ -245,6 +242,36 @@ namespace _01_09
                         }
                         index++;
                     }
+                }
+            }
+            /* Verificar linhas diagonais cima para baixo, direita para 
+         esquerda v2*/
+            index = 0;
+            if (x.GetLength(0) == x.GetLength(1)) {
+                for (int i = 0; i < x.GetLength(0); i++) {
+                    for (int n = 0; n < 1; n++) {
+                        while (index < x.GetLength(0)) {
+                            for (int z = x.GetLength(0) - 1; z >= 0; z--) {
+                                /* Verificar se existe um valor igual ao que o
+                                 * user escolheu */
+                                if (x[index, z] == ui) {
+                                    // Incrementa se for igual
+                                    Console.WriteLine($"Iteração {z}. Elemento {x[index, z]}"); //teste, delete later
+                                    sum++;
+                                    // Verificar se existe quatro números seguidos
+                                    if (sum >= 4) {
+                                        isFour = true;
+                                    }
+                                } else if (x[index, z] != ui) {
+                                    // Descrementa se não for igual
+                                    Console.WriteLine($"Iteração {z}. Elemento {x[index, z]}"); //teste, delete later
+                                    sum--;
+                                }
+                                index++;
+                            }
+                        }
+                    }
+                    sum = default;
                 }
             }
 
