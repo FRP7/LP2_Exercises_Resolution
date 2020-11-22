@@ -22,7 +22,7 @@ namespace _01_14
         /// Construir mapas e mostrar no ecrã.
         /// </summary>
         /// <param name="gamemap"> Array onde vão ser guardados os mapas para
-        /// expor os dados</param>
+        /// expor os dados.</param>
         public static void PrintRating(GameMap[] gameMap) {
             Console.WriteLine("Name              Filename     " +
                 " Sucess Rate     Top Score");
@@ -31,13 +31,13 @@ namespace _01_14
 
             for (int i = 0; i < gameMap.Length; i++) {
                 string showName = string.Format("{0,-18}", gameMap[i].Name);
-                string showFileName = string.Format("{0,-16}",
+                string showFileName = string.Format("{0,-21}",
                     gameMap[i].Filename);
-                string showSucessRate = string.Format("{0,-15:p1}",
-                    gameMap[i].SucessRate);
+                string showSuccessRate = string.Format("{0,-12:p1}",
+                    gameMap[i].SuccessRate);
                 string showTopScore = string.Format("{0,0:F3}",
                     gameMap[i].TopScore);
-                Console.WriteLine(showName + showFileName + showSucessRate +
+                Console.WriteLine(showName + showFileName + showSuccessRate +
                     showTopScore);
             }
         }

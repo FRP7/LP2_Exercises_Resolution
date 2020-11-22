@@ -32,7 +32,7 @@ namespace _01_14
         /// <summary>
         /// Percentagem de sucesso.
         /// </summary>
-        public float SucessRate {
+        public float SuccessRate {
             get {
                 if (gamesPlayed == 0)
                     return 0f;
@@ -64,16 +64,18 @@ namespace _01_14
         public GameMap(string name, string fileName) {
             Name = name;
             Filename = fileName;
-            gamesPlayed = 0;
-            gamesWon = 0;
-            topScore = 0;
+            gamesPlayed = 100;
+            gamesWon = 50;
+            topScore = 200;
         }
 
         /// <summary>
         /// Método que incrementa gamesPlayed e Gameswon (este último sendo 
         /// caso um jogo seja ganho).
+        /// O gamesPlayed é o número de jogos jogados e gamesWon é o número 
+        /// de jogos ganhos.
         /// </summary>
-        /// <param name="won"> Bool que indica se ganhou um jogo. </param>
+        /// <param name="won"> Bool que indica se ganhou aquele jogo. </param>
         public void GamePlayed(bool won) {
             gamesPlayed++;
             if (won) {
