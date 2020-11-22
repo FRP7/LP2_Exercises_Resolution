@@ -136,6 +136,8 @@ namespace _01_09
 
             int index = 0;
 
+            int minus = 1;
+
             // Verificar se tem quatro valores seguidos
             bool isFour = false;
 
@@ -218,91 +220,37 @@ namespace _01_09
             // Retomar a soma a zero
             sum = default;
 
-            // Retomar a soma a zero
-            sum = default;
 
             /* Verificar linhas diagonais cima para baixo, direita para 
-            esquerda*/
-            if (x.GetLength(0) == x.GetLength(1)) {
-                for (int n = 0; n < 1; n++) {
-                    for (int j = x.GetLength(1) - 1; j >= 0; j--) {
-                        /* Verificar se existe um valor igual ao que o user 
-                        escolheu*/
-                        // Incrementa se for igual
-                        if (x[index, j] == ui) {
-                            sum++;
-                            // Verificar se existe quatro números seguidos
-                            if (sum >= 4) {
-                                isFour = true;
-                            }
-                        }
-                        // Descrementa se não for igual
-                        else if (x[index, j] != ui) {
-                            sum--;
-                        }
-                        index++;
-                    }
-                }
-            }
-            /* Verificar linhas diagonais cima para baixo, direita para 
-         esquerda v2*/
-            index = 0;
+          esquerda*/
             if (x.GetLength(0) == x.GetLength(1)) {
                 for (int i = 0; i < x.GetLength(0); i++) {
-                    for (int n = 0; n < 1; n++) {
-                        while (index < x.GetLength(0)) {
-                            for (int z = x.GetLength(0) - 1; z >= 0; z--) {
-                                /* Verificar se existe um valor igual ao que o
-                                 * user escolheu */
-                                if (x[index + i, z] == ui) {
-                                    // Incrementa se for igual
-                                    //Console.WriteLine($"Iteração {z}. Elemento {x[index + i, z]}"); //teste, delete later
-                                    sum++;
-                                    // Verificar se existe quatro números seguidos
-                                    if (sum >= 4) {
-                                        isFour = true;
-                                    }
-                                } else if (x[index + i, z] != ui) {
-                                    // Descrementa se não for igual
-                                    //Console.WriteLine($"Iteração {z}. Elemento {x[index + i, z]}"); //teste, delete later
-                                    sum--;
-                                }
-                                index++;
-                            }
-                        }
-                    }
-                    sum = default;
-                }
-            }
-
-            // experimentar
-            int add = 0;
-            int minus = 1;
-            if (x.GetLength(0) == x.GetLength(1)) {
-                for (int i = 0; i < x.GetLength(0); i++) {
-                    add = 0;
+                    index = 0;
                     for (int z = x.GetLength(0) - minus; z >= 0; z--) {
                         /* Verificar se existe um valor igual ao que o
                          * user escolheu */
-                        if (x[add + i, z + i] == ui) {
+                        if (x[index + i, z + i] == ui) {
                             // Incrementa se for igual
-                            Console.WriteLine($"Iteração {z}. Elemento {x[add + i, z + i]}"); //teste, delete later
-                            sum++;
+                            Console.WriteLine($"Iteração {z}. Elemento {x[index + i, z + i]}"); //teste, delete later
+                            sum--;
                             // Verificar se existe quatro números seguidos
                             if (sum >= 4) {
                                 isFour = true;
                             }
-                        } else if (x[add + i, z + i] != ui) {
+                        } else if (x[index + i, z + i] != ui) {
                             // Descrementa se não for igual
-                            Console.WriteLine($"Iteração {z}. Elemento {x[add + i, z + i]}"); //teste, delete later
-                            sum--;
+                            Console.WriteLine($"Iteração {z}. Elemento {x[index + i, z + i]}"); //teste, delete later
+                            sum++;
                         }
-                        add++;
+                        index++;
+                        Console.WriteLine("Sum " + sum);
                     }
                     minus++;
                 }
+                sum = default;
             }
 
+            sum = default;
 
             // Verificar se foi encontrado quatro valores seguidos 
             if (isFour == true) {
