@@ -159,7 +159,7 @@ namespace _01_09
                         }
                     } else if (x[n, j] != ui) {
                         // Descrementa se não for igual
-                        sum--;
+                        sum = default;
                     }
                 }
             }
@@ -183,7 +183,7 @@ namespace _01_09
                         }
                     } else if (x[n, j] != ui) {
                         // Descrementa se não for igual
-                        sum--;
+                        sum = default;
                     }
                 }
             }
@@ -207,7 +207,7 @@ namespace _01_09
                                 }
                             } else if (x[z + i, z] != ui) {
                                 // Descrementa se não for igual
-                                sum--;
+                                sum = default;
                             }
                         }
                     }
