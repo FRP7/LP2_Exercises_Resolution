@@ -200,7 +200,6 @@ namespace _01_09
                              * user escolheu */
                             if (x[z + i, z] == ui) {
                                 // Incrementa se for igual
-                                //Console.WriteLine("Elemento: " + x[z + i, z]); //teste, delete later
                                 sum++;
                                 // Verificar se existe quatro números seguidos
                                 if (sum >= 4) {
@@ -208,7 +207,6 @@ namespace _01_09
                                 }
                             } else if (x[z + i, z] != ui) {
                                 // Descrementa se não for igual
-                                //Console.WriteLine("Elemento: " + x[z + i, z]); //teste, delete later
                                 sum--;
                             }
                         }
@@ -231,19 +229,16 @@ namespace _01_09
                          * user escolheu */
                         if (x[index + i, z + i] == ui) {
                             // Incrementa se for igual
-                            Console.WriteLine($"Iteração {z}. Elemento {x[index + i, z + i]}"); //teste, delete later
-                            sum--;
+                            sum++;
                             // Verificar se existe quatro números seguidos
                             if (sum >= 4) {
                                 isFour = true;
                             }
                         } else if (x[index + i, z + i] != ui) {
                             // Descrementa se não for igual
-                            Console.WriteLine($"Iteração {z}. Elemento {x[index + i, z + i]}"); //teste, delete later
-                            sum++;
+                            sum = default;
                         }
                         index++;
-                        Console.WriteLine("Sum " + sum);
                     }
                     minus++;
                 }
