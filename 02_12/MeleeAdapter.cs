@@ -2,24 +2,32 @@
 
 namespace _02_12
 {
+    /// <summary>
+    /// Adaptador de Melee
+    /// </summary>
     class MeleeAdapter : IWeapon
     {
+        // Interface IMelee.
         private IMelee melee;
-        // This property is true if weapon is in alternate firing mode, false
-        // otherwise
-        public bool IsAlternate { get; }
 
+        // Enum dos tipos de ataque.
         private MeleeAttacks meleeAttacks;
 
+        // Indicar se o jogador faz ataques horizontais ou verticais.
+        public bool IsAlternate { get; }
+
+        // Stamina necessária para realizar os ataques.
         private int stamina;
 
-        // Reload the weapon
+        // Recarregar a stamina.
         public void Reload() {
             stamina = 10;
         }
 
-        // Shoot the weapon, return true if any rounds left to shoot in current
-        // firing mode, false otherwise
+        /// <summary>
+        /// Atacar caso tenha stamina suficiente.
+        /// </summary>
+        /// <returns> Retorna falso se não tiver stamina suficiente. </returns>
         public bool Shoot() {
             if(stamina >= 10) {
                 if (meleeAttacks == MeleeAttacks.HorizontalAttack) {
@@ -38,7 +46,7 @@ namespace _02_12
             }
         }
 
-        // Switch between main and alternate firing modes
+        // Mudar o tipo de ataque.
         public void SwitchFireMode() {
             if(IsAlternate == true) {
                 meleeAttacks = MeleeAttacks.HorizontalAttack;
@@ -48,6 +56,7 @@ namespace _02_12
             }
         }
 
+        // Inicializar o adaptador.
         public MeleeAdapter(IMelee melee, bool isAlternate) {
             stamina = 10;
             IsAlternate = isAlternate;
