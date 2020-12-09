@@ -1,80 +1,57 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace _02_12
 {
     class MeleeAdapter : IWeapon
     {
-        // Access the IMelee interface
-        IMelee melee;
-
-        // Enums of kinds of attack mode
-        public enum FireMode
-        {
-            above,
-            below,
-            left,
-            right
-        }
-
-        private FireMode fireMode;
-
+        private IMelee melee;
         // This property is true if weapon is in alternate firing mode, false
         // otherwise
         public bool IsAlternate { get; }
 
+        private MeleeAttacks meleeAttacks;
+
+        private int stamina;
+
         // Reload the weapon
         public void Reload() {
-
+            stamina = 10;
         }
 
         // Shoot the weapon, return true if any rounds left to shoot in current
         // firing mode, false otherwise
         public bool Shoot() {
-            if(IsAlternate == false) {
-                return false;
-            }
-            else {
-                CurrentFireMode();
+            if(stamina >= 10) {
+                if (meleeAttacks == MeleeAttacks.HorizontalAttack) {
+                    melee.AttackFromTheLeft();
+                    melee.AttackFromTheRight();
+                    stamina -= 10;
+                } else if (meleeAttacks == MeleeAttacks.VerticalAttack) {
+                    melee.AttackFromAbove();
+                    melee.AttackFromBelow();
+                    stamina -= 10;
+                }
                 return true;
+            } else {
+                Console.WriteLine("Not enough stamina.");
+                return false;
             }
         }
 
         // Switch between main and alternate firing modes
         public void SwitchFireMode() {
-            Random rnd = new Random();
-            int rndNumber = rnd.Next(1, 5);
-            if(rndNumber == 1) {
-                fireMode = FireMode.above;
-            } else if(rndNumber == 2) {
-                fireMode = FireMode.below;
+            if(IsAlternate == true) {
+                meleeAttacks = MeleeAttacks.HorizontalAttack;
             }
-            else if(rndNumber == 3) {
-                fireMode = FireMode.left;
-            } else if(rndNumber == 4) {
-                fireMode = FireMode.right;
+            else {
+                meleeAttacks = MeleeAttacks.VerticalAttack;
             }
         }
 
-        public void CurrentFireMode() {
-            SwitchFireMode();
-            if (fireMode == FireMode.above) {
-                melee.AttackFromAbove();
-            } else if (fireMode == FireMode.below) {
-                melee.AttackFromBelow();
-            } else if (fireMode == FireMode.left) {
-                melee.AttackFromTheLeft();
-            } else if (fireMode == FireMode.right) {
-                melee.AttackFromTheRight(); 
-            }
-            }
-
-        // Constructor of the adapter
-        public MeleeAdapter(IMelee melee) {
+        public MeleeAdapter(IMelee melee, bool isAlternate) {
+            stamina = 10;
+            IsAlternate = isAlternate;
             this.melee = melee;
-            IsAlternate = true;
-            Shoot();
         }
     }
 }
