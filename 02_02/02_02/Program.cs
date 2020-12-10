@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _02_02
 {
@@ -8,54 +9,20 @@ namespace _02_02
     class Program
     {
         static void Main(string[] args) {
-            // Aceder à classe Squad.
-            Squad squad = new Squad();
-            //
-            // Aceder à subclasse SubSquad.
-            SubSquad subsquad = new SubSquad();
-            //
-            // Construir units e adicionar às stacks da Squad e SubSquad.
-            Unit unit1 = new Unit("Space Marine", new Vector2(1, 2), 100);
-            squad.squadstack.Push(unit1);
-            subsquad.subsquadstack.Push(unit1);
-            Unit unit2 = new Unit("Space Marine", new Vector2(3, 4), 100);
-            squad.squadstack.Push(unit2);
-            subsquad.subsquadstack.Push(unit2);
-            Unit unit3 = new Unit("Ripper", new Vector2(3, 4), 200);
-            squad.squadstack.Push(unit3);
-            Unit unit4 = new Unit("Healer", new Vector2(5, 6), 50);
-            squad.squadstack.Push(unit4);
-            //
 
-            // Mostrar no ecrã a squad.
-            Console.WriteLine("Squad: ");
-            foreach (object item in squad.squadstack) {
-                Console.WriteLine(item.ToString());
-            }
-            //
+            ICollection<IUnit> units = new List<IUnit>();
 
-            // Adicionar movimento à squad.
-            Console.WriteLine("New squad position: ");
-            squad.Move(new Vector2(1, 1));
-            foreach (object item in squad.squadstack) {
-                Console.WriteLine(item.ToString());
-            }
-            //
+            IUnit unit1 = new Unit("Soldier", new Vector2(5, 10), 100);
+            IUnit unit2 = new Unit("Tank", new Vector2(15, 20), 200);
+            IUnit unit3 = new Unit("Healer", new Vector2(25, 30), 300);
 
-            // Mostrar no ecrã a subsquad.
-            Console.WriteLine("Sub squad: ");
-            foreach (object item in subsquad.subsquadstack) {
-                Console.WriteLine(item.ToString());
-            }
-            //
+            units.Add(unit1);
+            units.Add(unit2);
+            units.Add(unit3);
 
-            // Adicionar movimento à subsquad.
-            Console.WriteLine("New sub squad position: ");
-            subsquad.Move(new Vector2(1, 1));
-            foreach (object item in subsquad.subsquadstack) {
-                Console.WriteLine(item.ToString());
-            }
-            //
+            Squad squad = new Squad(units);
+
+            squad.Teste();
         }
     }
     //

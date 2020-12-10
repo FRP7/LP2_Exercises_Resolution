@@ -3,71 +3,53 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-namespace _02_02
+namespace _02_02 
 {
     /// <summary>
     /// Classe da Squad.
     /// </summary>
-    public class Squad
-    {  
-        // Stack das units da squad.
-        public Stack<object> squadstack = new Stack<object>();
-        //
+    public class Squad : IUnit
+    {
 
-        // Variável string de leitura de exposição do número de units na squad.
-        protected virtual string Name {
-            get => $"Group of {squadstack.Count} units";
-        }
-        //
+        private ICollection<IUnit> squadUnits;
 
-        // Variável Vector2 da posição da squad.
-        protected virtual Vector2 Position {
+        public string UnitName { get => $"Group of {squadUnits.Count} units."; }
+        //public Vector2 Position { get; }
+        public Vector2 Position {
             get {
-                float sumX = 0;
-                float sumY = 0;
-                float avgX;
-                float avgY;
-                foreach (Unit item in squadstack) {
-                    sumX += item.Position.X;
+                float x = 0;
+                float y = 0;
+                foreach(IUnit item in squadUnits) {
+                    x += item.Position.X;
+                    y += item.Position.Y;
                 }
-                foreach (Unit item in squadstack) {
-                    sumY += item.Position.Y;
-                }
-                avgX = sumX / squadstack.Count;
-                avgY = sumY / squadstack.Count;
-
-                return new Vector2(avgX, avgY);
+                return new Vector2(x / squadUnits.Count, y / squadUnits.Count);
             }
-            set {; }
         }
-        //
-
-        // Variável float de leitura da vida da squad.
-        protected virtual float Health { 
+        public float Health {
             get {
-                float sum = 0;
-                foreach (Unit item in squadstack) {
-                    sum += item.Health;
+                float health = 0;
+                foreach(IUnit item in squadUnits) {
+                    health += item.Health; 
                 }
-                return sum / squadstack.Count;
+                return health / squadUnits.Count;
             }
         }
-        //
-       
-        /// <summary>
-        /// Método de adicionar movimento à squad.
-        /// </summary>
-        /// <param name="newposition"> Novo movimento. </param>
-        public virtual void Move(Vector2 newposition) {
-            Vector2 finalmovement = new Vector2(newposition.X - Position.X,
-                newposition.Y - Position.Y);
 
-            foreach (Unit item in squadstack) {
-                item.Move(new Vector2(Position.X + finalmovement.X, 
-                    Position.Y + finalmovement.Y));
-            }
+        public void Move(Vector2 newPosition) {
+            newPosition = new Vector2(newPosition.X - Position.X, 
+                newPosition.Y - Position.Y);
         }
-        //
+
+        public Squad(ICollection<IUnit> units) {
+            //squadUnits = new List<IUnit>();
+            squadUnits = units;
+        }
+
+        public void Teste() {
+            Console.WriteLine(UnitName);
+            Console.WriteLine($"X: {Position.X}. Y: {Position.Y}");
+            Console.WriteLine("Health: " + Health);
+        }
     }
-    //
 }
