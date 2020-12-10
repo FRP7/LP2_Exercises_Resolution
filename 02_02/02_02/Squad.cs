@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
 
@@ -14,7 +13,7 @@ namespace _02_02
         private ICollection<IUnit> squadUnits;
 
         // Descrição do batalhão.
-        public string UnitName { get => $"Group of {squadUnits.Count} units."; }
+        public string UnitName { get => $"Group of {squadUnits.Count} units.";}
 
         // Posição do batalhão.
         public Vector2 Position {
