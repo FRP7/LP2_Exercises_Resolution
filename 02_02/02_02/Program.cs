@@ -27,5 +27,4 @@ namespace _02_02
             Squad squad = new Squad(units);
         }
     }
-    //
 }
