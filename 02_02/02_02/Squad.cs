@@ -47,7 +47,6 @@ namespace _02_02
 
         // Construtor do batalhão.
         public Squad(ICollection<IUnit> units) {
-            //squadUnits = new List<IUnit>();
             squadUnits = units;
         }
     }
