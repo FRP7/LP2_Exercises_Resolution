@@ -16,15 +16,6 @@ namespace _02_10
         // Propriedade de leitura que define o valor do Y.
         public int Y { get; }
 
-        public bool IsX { get {
-                if(X >= 0 && X <= XMax) {
-                    return true;
-                }
-                else {
-                    return false;
-                }
-            } }
-
         /// <summary>
         /// Construtor de TilePosition.
         /// </summary>
@@ -45,20 +36,10 @@ namespace _02_10
             bool isY = true;
 
             // Verificar se X respeita os limites.
-            if(X >= 0 && X <= XMax) {
-                isX = true;
-            }
-            else {
-                isX = false;
-            }
+            isX = X >= 0 && X <= XMax ? true : false;
 
             // Verificar se Y respeita os limites.
-            if (Y >= 0 && Y <= YMax) {
-                isY = true;
-            }
-            else {
-                isY = false;
-            }
+            isY = Y >= 0 && Y <= YMax ? true : false;
 
             // Verificar se pelo menos um dos bools é falso.
             if (isX == false || isY == false) {
