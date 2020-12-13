@@ -8,10 +8,10 @@ namespace _02_10
     {
         // Variável string com o texto a mostrar na mensagem de erro.
         private string finalmessage;
-        //
+        
         // Fazer override da Mensagem mãe com a finalmessage.
         public override string Message => finalmessage;
-        //
+        
 
         /// <summary>
         /// Construtor de InvalidTilePositionException.
@@ -29,6 +29,5 @@ namespace _02_10
                 finalmessage = "O Y e o X estão fora do intervalo";
             }
         }
-        //
     }
 }

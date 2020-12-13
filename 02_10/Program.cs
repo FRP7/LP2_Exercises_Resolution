@@ -7,33 +7,32 @@ namespace _02_10
         static void Main(string[] args) {
             // Experimentar os valores.
             try {
-                TilePosition tileposition1 = new TilePosition(3, 3);
+                TilePosition tileposition1 = new TilePosition(3, 3, 5, 5);
             }
             catch(InvalidTilePositionException msg) {
                 Console.WriteLine(msg.Message);
             }
 
             try {
-                TilePosition tileposition1 = new TilePosition(6, 3);
+                TilePosition tileposition1 = new TilePosition(6, 3, 5, 5);
             }
             catch (InvalidTilePositionException msg) {
                 Console.WriteLine(msg.Message);
             }
 
             try {
-                TilePosition tileposition1 = new TilePosition(3, 6);
+                TilePosition tileposition1 = new TilePosition(3, 6, 5, 5);
             }
             catch (InvalidTilePositionException msg) {
                 Console.WriteLine(msg.Message);
             }
 
             try {
-                TilePosition tileposition1 = new TilePosition(6, 6);
+                TilePosition tileposition1 = new TilePosition(6, 6, 5, 5);
             }
             catch (InvalidTilePositionException msg) {
                 Console.WriteLine(msg.Message);
             }
-            //
         }
     }
 }
