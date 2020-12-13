@@ -6,13 +6,13 @@ namespace _02_10
     {
         // Propriedade que define limite máximo do X.
         public static int XMax { get; internal set; }
-        //
+        
         // Propriedade que define limite máximo do Y.
         public static int YMax { get; internal set; }
-        //
+        
         // Propriedade de leitura que define o valor do X.
         public int X { get; }
-        //
+        
         // Propriedade de leitura que define o valor do Y.
         public int Y { get; }
 
@@ -21,10 +21,7 @@ namespace _02_10
         /// </summary>
         /// <param name="x"> Definir o valor de X. </param>
         /// <param name="y"> Definir o valor de Y. </param>
-        public TilePosition(int x, int y, int xMax, int yMax) {
-            // Definir os valores do XMax e YMax.
-            XMax = xMax;
-            YMax = yMax;
+        public TilePosition(int x, int y, int xMax) {
 
             // Definir que os valores X e Y são iguais aos dos parâmetros.
             X = x;
