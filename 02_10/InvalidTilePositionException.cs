@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace _02_10
 {
@@ -16,16 +14,6 @@ namespace _02_10
         /// <param name="x"> Valor de isX. </param>
         /// <param name="y"> Valor de isY. </param>
         public InvalidTilePositionException(bool x, bool y) {
-            /*if(x != true && y == true) {
-                Message = "O X está fora do intervalo";
-            }
-            else if (x == true && y != true) {
-                Message = "O Y está fora do intervalo";
-            }
-            else if (x != true && y != true) {
-                Message = "O Y e o X estão fora do intervalo";
-            }*/
-
             if(x != true) {
                 Message = "O X está fora do intervalo";
             }
